@@ -19,27 +19,32 @@
 <!-- ===== HOW IT WORKS ===== -->
 <section class="py-5 bg-light-warm">
   <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-8 text-center mb-5">
-        <div class="section-tag reveal">The Engine</div>
-        <h2 class="fw-bold reveal reveal-delay-1">How Revun's Task Completion Engine Works</h2>
-      </div>
+    <div class="text-center mb-5">
+      <div class="section-tag reveal">The Engine</div>
+      <h2 class="fw-bold reveal reveal-delay-1">How Revun's Task Completion Engine Works</h2>
     </div>
     <div class="row g-4 justify-content-center">
-      {{ $steps := slice
-        (dict "n" "1" "title" "Detects Work"         "sub" "AI identifies tasks from incoming requests, messages, deadlines, and triggers")
-        (dict "n" "2" "title" "Executes Actions"     "sub" "System completes routine tasks automatically or routes them with full context")
-        (dict "n" "3" "title" "Verifies Completion"  "sub" "AI confirms work is done correctly and documents everything for audit trails")
-      }}
-      {{ range $i, $s := $steps }}
-      <div class="col-md-4 reveal{{ if gt $i 0 }} reveal-delay-{{ $i }}{{ end }}">
+      <div class="col-md-4 reveal">
         <div class="ai-step-card text-center p-4 bg-white h-100">
-          <div class="ai-step-num mb-3">{{ $s.n }}</div>
-          <h6 class="fw-bold mb-2">{{ $s.title }}</h6>
-          <p class="text-muted small mb-0">{{ $s.sub }}</p>
+          <div class="ai-step-num mb-3">1</div>
+          <h6 class="fw-bold mb-2">Detects Work</h6>
+          <p class="text-muted small mb-0">AI identifies tasks from incoming requests, messages, deadlines, and triggers</p>
         </div>
       </div>
-      {{ end }}
+      <div class="col-md-4 reveal reveal-delay-1">
+        <div class="ai-step-card text-center p-4 bg-white h-100">
+          <div class="ai-step-num mb-3">2</div>
+          <h6 class="fw-bold mb-2">Executes Actions</h6>
+          <p class="text-muted small mb-0">System completes routine tasks automatically or routes them with full context</p>
+        </div>
+      </div>
+      <div class="col-md-4 reveal reveal-delay-2">
+        <div class="ai-step-card text-center p-4 bg-white h-100">
+          <div class="ai-step-num mb-3">3</div>
+          <h6 class="fw-bold mb-2">Verifies Completion</h6>
+          <p class="text-muted small mb-0">AI confirms work is done correctly and documents everything for audit trails</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -48,32 +53,88 @@
 <!-- ===== AUTOMATIONS ===== -->
 <section class="py-5 bg-white">
   <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-8 text-center mb-5">
-        <div class="section-tag reveal">End-to-End</div>
-        <h2 class="fw-bold reveal reveal-delay-1">Automations Revun Runs End-to-End</h2>
-        <p class="text-muted reveal reveal-delay-2">These aren't just notifications — these are completed tasks that drive operations forward.</p>
-      </div>
+    <div class="text-center mb-5">
+      <div class="section-tag reveal">End-to-End</div>
+      <h2 class="fw-bold reveal reveal-delay-1">Automations Revun Runs End-to-End</h2>
+      <p class="text-muted reveal reveal-delay-2">These aren't just notifications — these are completed tasks that drive operations forward.</p>
     </div>
     <div class="row g-3">
-      {{ $cats := slice
-        (dict "title" "Payments &amp; Collections" "items" (slice "Rent reminders" "Overdue sequences" "Payment links" "Escalation workflows" "Confirmation receipts"))
-        (dict "title" "Leasing"                    "items" (slice "Lead capture + routing" "Showing scheduling workflows" "Application checklist automation" "Offer/package completion" "Lease generation + signature routing"))
-        (dict "title" "Maintenance"                "items" (slice "Request intake + categorization" "Dispatch workflows" "Quote approvals" "Vendor reminders" "Completion verification + documentation"))
-        (dict "title" "Legal &amp; Compliance"     "items" (slice "Notice workflows" "Required document checklists" "Filing readiness packs" "Evidence packaging and audit logs"))
-        (dict "title" "Marketing &amp; Listings"   "items" (slice "Listing creation workflows" "Syndication to listing platforms" "Social media distribution workflows" "Lead intake and follow-up routing"))
-        (dict "title" "Recruiting"                 "items" (slice "Job postication" "Applicant pipeline routing" "Interview scheduling workflows" "Onboarding task sequences"))
-      }}
-      {{ range $i, $c := $cats }}
-      <div class="col-md-6 col-lg-4 reveal{{ if gt $i 0 }} reveal-delay-{{ mod $i 3 }}{{ end }}">
+
+      <div class="col-md-6 col-lg-4 reveal">
         <div class="ai-auto-card p-4 h-100">
-          <h6 class="ai-auto-title fw-bold mb-3">{{ $c.title | safeHTML }}</h6>
+          <h6 class="ai-auto-title fw-bold mb-3">Payments &amp; Collections</h6>
           <ul class="list-unstyled ai-auto-list small text-muted mb-0">
-            {{ range $c.items }}<li><i class="bi bi-check-circle-fill me-2" style="color:#E55733;"></i>{{ . }}</li>{{ end }}
+            <li><i class="bi bi-check-circle-fill me-2" style="color:#E55733;"></i>Rent reminders</li>
+            <li><i class="bi bi-check-circle-fill me-2" style="color:#E55733;"></i>Overdue sequences</li>
+            <li><i class="bi bi-check-circle-fill me-2" style="color:#E55733;"></i>Payment links</li>
+            <li><i class="bi bi-check-circle-fill me-2" style="color:#E55733;"></i>Escalation workflows</li>
+            <li><i class="bi bi-check-circle-fill me-2" style="color:#E55733;"></i>Confirmation receipts</li>
           </ul>
         </div>
       </div>
-      {{ end }}
+
+      <div class="col-md-6 col-lg-4 reveal reveal-delay-1">
+        <div class="ai-auto-card p-4 h-100">
+          <h6 class="ai-auto-title fw-bold mb-3">Leasing</h6>
+          <ul class="list-unstyled ai-auto-list small text-muted mb-0">
+            <li><i class="bi bi-check-circle-fill me-2" style="color:#E55733;"></i>Lead capture + routing</li>
+            <li><i class="bi bi-check-circle-fill me-2" style="color:#E55733;"></i>Showing scheduling workflows</li>
+            <li><i class="bi bi-check-circle-fill me-2" style="color:#E55733;"></i>Application checklist automation</li>
+            <li><i class="bi bi-check-circle-fill me-2" style="color:#E55733;"></i>Offer/package completion</li>
+            <li><i class="bi bi-check-circle-fill me-2" style="color:#E55733;"></i>Lease generation + signature routing</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 reveal reveal-delay-2">
+        <div class="ai-auto-card p-4 h-100">
+          <h6 class="ai-auto-title fw-bold mb-3">Maintenance</h6>
+          <ul class="list-unstyled ai-auto-list small text-muted mb-0">
+            <li><i class="bi bi-check-circle-fill me-2" style="color:#E55733;"></i>Request intake + categorization</li>
+            <li><i class="bi bi-check-circle-fill me-2" style="color:#E55733;"></i>Dispatch workflows</li>
+            <li><i class="bi bi-check-circle-fill me-2" style="color:#E55733;"></i>Quote approvals</li>
+            <li><i class="bi bi-check-circle-fill me-2" style="color:#E55733;"></i>Vendor reminders</li>
+            <li><i class="bi bi-check-circle-fill me-2" style="color:#E55733;"></i>Completion verification + documentation</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 reveal">
+        <div class="ai-auto-card p-4 h-100">
+          <h6 class="ai-auto-title fw-bold mb-3">Legal &amp; Compliance</h6>
+          <ul class="list-unstyled ai-auto-list small text-muted mb-0">
+            <li><i class="bi bi-check-circle-fill me-2" style="color:#E55733;"></i>Notice workflows</li>
+            <li><i class="bi bi-check-circle-fill me-2" style="color:#E55733;"></i>Required document checklists</li>
+            <li><i class="bi bi-check-circle-fill me-2" style="color:#E55733;"></i>Filing readiness packs</li>
+            <li><i class="bi bi-check-circle-fill me-2" style="color:#E55733;"></i>Evidence packaging and audit logs</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 reveal reveal-delay-1">
+        <div class="ai-auto-card p-4 h-100">
+          <h6 class="ai-auto-title fw-bold mb-3">Marketing &amp; Listings</h6>
+          <ul class="list-unstyled ai-auto-list small text-muted mb-0">
+            <li><i class="bi bi-check-circle-fill me-2" style="color:#E55733;"></i>Listing creation workflows</li>
+            <li><i class="bi bi-check-circle-fill me-2" style="color:#E55733;"></i>Syndication to listing platforms</li>
+            <li><i class="bi bi-check-circle-fill me-2" style="color:#E55733;"></i>Social media distribution workflows</li>
+            <li><i class="bi bi-check-circle-fill me-2" style="color:#E55733;"></i>Lead intake and follow-up routing</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 reveal reveal-delay-2">
+        <div class="ai-auto-card p-4 h-100">
+          <h6 class="ai-auto-title fw-bold mb-3">Recruiting</h6>
+          <ul class="list-unstyled ai-auto-list small text-muted mb-0">
+            <li><i class="bi bi-check-circle-fill me-2" style="color:#E55733;"></i>Job posting and applicant routing</li>
+            <li><i class="bi bi-check-circle-fill me-2" style="color:#E55733;"></i>Applicant pipeline routing</li>
+            <li><i class="bi bi-check-circle-fill me-2" style="color:#E55733;"></i>Interview scheduling workflows</li>
+            <li><i class="bi bi-check-circle-fill me-2" style="color:#E55733;"></i>Onboarding task sequences</li>
+          </ul>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -82,27 +143,35 @@
 <!-- ===== WHAT IT MEANS ===== -->
 <section class="py-5 bg-light-warm">
   <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-8 text-center mb-5">
-        <div class="section-tag reveal">The Impact</div>
-        <h2 class="fw-bold reveal reveal-delay-1">What This Means for Your Operations</h2>
-      </div>
+    <div class="text-center mb-5">
+      <div class="section-tag reveal">The Impact</div>
+      <h2 class="fw-bold reveal reveal-delay-1">What This Means for Your Operations</h2>
     </div>
     <div class="row g-3">
-      {{ $means := slice
-        (dict "title" "Massive Time Savings"              "sub" "Tasks that took hours now take minutes. Workflows that required multiple handoffs now run automatically from start to finish.")
-        (dict "title" "Fewer Errors"                      "sub" "AI cross-checks work, catches mistakes before they happen, and ensures consistency across all operations.")
-        (dict "title" "Better Service Quality"            "sub" "Nothing falls through the cracks. Every request gets routed, tracked, and completed with full accountability.")
-        (dict "title" "Team Can Focus on High-Value Work" "sub" "When routine tasks are automated, your team can focus on relationships, strategy, and complex problem-solving.")
-      }}
-      {{ range $i, $m := $means }}
-      <div class="col-md-6 reveal{{ if gt $i 0 }} reveal-delay-{{ $i }}{{ end }}">
+      <div class="col-md-6 reveal">
         <div class="ai-means-card p-4 bg-white h-100">
-          <h6 class="fw-bold mb-2">{{ $m.title }}</h6>
-          <p class="text-muted small mb-0">{{ $m.sub }}</p>
+          <h6 class="fw-bold mb-2">Massive Time Savings</h6>
+          <p class="text-muted small mb-0">Tasks that took hours now take minutes. Workflows that required multiple handoffs now run automatically from start to finish.</p>
         </div>
       </div>
-      {{ end }}
+      <div class="col-md-6 reveal reveal-delay-1">
+        <div class="ai-means-card p-4 bg-white h-100">
+          <h6 class="fw-bold mb-2">Fewer Errors</h6>
+          <p class="text-muted small mb-0">AI cross-checks work, catches mistakes before they happen, and ensures consistency across all operations.</p>
+        </div>
+      </div>
+      <div class="col-md-6 reveal reveal-delay-2">
+        <div class="ai-means-card p-4 bg-white h-100">
+          <h6 class="fw-bold mb-2">Better Service Quality</h6>
+          <p class="text-muted small mb-0">Nothing falls through the cracks. Every request gets routed, tracked, and completed with full accountability.</p>
+        </div>
+      </div>
+      <div class="col-md-6 reveal reveal-delay-3">
+        <div class="ai-means-card p-4 bg-white h-100">
+          <h6 class="fw-bold mb-2">Team Can Focus on High-Value Work</h6>
+          <p class="text-muted small mb-0">When routine tasks are automated, your team can focus on relationships, strategy, and complex problem-solving.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -120,22 +189,28 @@
       </div>
     </div>
     <div class="row g-3 justify-content-center">
-      {{ $global := slice
-        (dict "title" "Any Country"        "sub" "Configurable for regional requirements")
-        (dict "title" "Any Province/State" "sub" "Local compliance workflows built in")
-        (dict "title" "Any Portfolio"      "sub" "Scales from small to enterprise")
-      }}
-      {{ range $i, $g := $global }}
-      <div class="col-md-4 reveal{{ if gt $i 0 }} reveal-delay-{{ $i }}{{ end }}">
+      <div class="col-md-4 reveal">
         <div class="ai-global-card p-4 bg-light-warm h-100">
-          <h6 class="fw-bold mb-2">{{ $g.title }}</h6>
-          <p class="text-muted small mb-0">{{ $g.sub }}</p>
+          <h6 class="fw-bold mb-2">Any Country</h6>
+          <p class="text-muted small mb-0">Configurable for regional requirements</p>
         </div>
       </div>
-      {{ end }}
+      <div class="col-md-4 reveal reveal-delay-1">
+        <div class="ai-global-card p-4 bg-light-warm h-100">
+          <h6 class="fw-bold mb-2">Any Province/State</h6>
+          <p class="text-muted small mb-0">Local compliance workflows built in</p>
+        </div>
+      </div>
+      <div class="col-md-4 reveal reveal-delay-2">
+        <div class="ai-global-card p-4 bg-light-warm h-100">
+          <h6 class="fw-bold mb-2">Any Portfolio</h6>
+          <p class="text-muted small mb-0">Scales from small to enterprise</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
+
 
 <!-- ===== CTA ===== -->
 <section class="rp-cta-section text-white text-center">
@@ -153,4 +228,5 @@
     </div>
   </div>
 </section>
+
 {{ end }}

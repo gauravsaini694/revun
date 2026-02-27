@@ -61,33 +61,109 @@
       </div>
     </div>
     <div class="row g-3">
-      {{ $depts := slice
-        (dict "id" "PM"      "icon" "bi-building"      "label" "Property Management" "items" (slice "Unit management and listings" "Work order tracking" "Tenant communications" "Inspection workflows"))
-        (dict "id" "Leasing" "icon" "bi-person-lines-fill" "label" "Leasing"          "items" (slice "Lead tracking and follow-ups" "Listing syndication" "Application processing" "Lease generation and signing"))
-        (dict "id" "Maint"   "icon" "bi-wrench"         "label" "Maintenance"         "items" (slice "Work order creation and dispatch" "Vendor assignment and tracking" "Approval workflows" "Cost tracking and invoicing"))
-        (dict "id" "Acct"    "icon" "bi-calculator"     "label" "Accounting / Finance" "items" (slice "Rent collection and tracking" "Payment reconciliation" "Financial reporting" "Budget management"))
-        (dict "id" "Legal"   "icon" "bi-balance-scale"  "label" "Legal / Compliance"  "items" (slice "Document management" "Compliance checklists" "Audit trail and records" "Legal notice workflows"))
-        (dict "id" "HR"      "icon" "bi-person-plus"    "label" "Recruiting / Hiring / Onboarding" "items" (slice "Job posting and tracking" "Onboarding task automation" "Training workflows" "Role and permission setup"))
-      }}
-      {{ range $i, $d := $depts }}
-      <div class="col-md-4 reveal{{ if gt $i 0 }} reveal-delay-{{ $i }}{{ end }}">
+
+      <div class="col-md-4 reveal">
         <div class="rp-dept-accordion">
-          <button class="rp-dept-btn w-100 d-flex align-items-center justify-content-between px-3 py-3 border"
-            type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ $d.id }}">
-            <span class="d-flex align-items-center gap-2">
-              <i class="bi {{ $d.icon }}" style="color:#E55733;"></i>
-              <span class="fw-semibold small">{{ $d.label }}</span>
-            </span>
+          <button class="rp-dept-btn w-100 d-flex align-items-center justify-content-between px-3 py-3 border" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePM">
+            <span class="d-flex align-items-center gap-2"><i class="bi bi-building" style="color:#E55733;"></i><span class="fw-semibold small">Property Management</span></span>
             <i class="bi bi-chevron-down text-muted small"></i>
           </button>
-          <div id="collapse{{ $d.id }}" class="collapse rp-dept-body px-3 py-3 bg-white border border-top-0">
+          <div id="collapsePM" class="collapse rp-dept-body px-3 py-3 bg-white border border-top-0">
             <ul class="list-unstyled small text-muted mb-0">
-              {{ range $d.items }}<li class="py-1"><i class="bi bi-check2 me-2" style="color:#E55733;"></i>{{ . }}</li>{{ end }}
+              <li class="py-1"><i class="bi bi-check2 me-2" style="color:#E55733;"></i>Unit management and listings</li>
+              <li class="py-1"><i class="bi bi-check2 me-2" style="color:#E55733;"></i>Work order tracking</li>
+              <li class="py-1"><i class="bi bi-check2 me-2" style="color:#E55733;"></i>Tenant communications</li>
+              <li class="py-1"><i class="bi bi-check2 me-2" style="color:#E55733;"></i>Inspection workflows</li>
             </ul>
           </div>
         </div>
       </div>
-      {{ end }}
+
+      <div class="col-md-4 reveal reveal-delay-1">
+        <div class="rp-dept-accordion">
+          <button class="rp-dept-btn w-100 d-flex align-items-center justify-content-between px-3 py-3 border" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLeasing">
+            <span class="d-flex align-items-center gap-2"><i class="bi bi-person-lines-fill" style="color:#E55733;"></i><span class="fw-semibold small">Leasing</span></span>
+            <i class="bi bi-chevron-down text-muted small"></i>
+          </button>
+          <div id="collapseLeasing" class="collapse rp-dept-body px-3 py-3 bg-white border border-top-0">
+            <ul class="list-unstyled small text-muted mb-0">
+              <li class="py-1"><i class="bi bi-check2 me-2" style="color:#E55733;"></i>Lead tracking and follow-ups</li>
+              <li class="py-1"><i class="bi bi-check2 me-2" style="color:#E55733;"></i>Listing syndication</li>
+              <li class="py-1"><i class="bi bi-check2 me-2" style="color:#E55733;"></i>Application processing</li>
+              <li class="py-1"><i class="bi bi-check2 me-2" style="color:#E55733;"></i>Lease generation and signing</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 reveal reveal-delay-2">
+        <div class="rp-dept-accordion">
+          <button class="rp-dept-btn w-100 d-flex align-items-center justify-content-between px-3 py-3 border" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMaint">
+            <span class="d-flex align-items-center gap-2"><i class="bi bi-wrench" style="color:#E55733;"></i><span class="fw-semibold small">Maintenance</span></span>
+            <i class="bi bi-chevron-down text-muted small"></i>
+          </button>
+          <div id="collapseMaint" class="collapse rp-dept-body px-3 py-3 bg-white border border-top-0">
+            <ul class="list-unstyled small text-muted mb-0">
+              <li class="py-1"><i class="bi bi-check2 me-2" style="color:#E55733;"></i>Work order creation and dispatch</li>
+              <li class="py-1"><i class="bi bi-check2 me-2" style="color:#E55733;"></i>Vendor assignment and tracking</li>
+              <li class="py-1"><i class="bi bi-check2 me-2" style="color:#E55733;"></i>Approval workflows</li>
+              <li class="py-1"><i class="bi bi-check2 me-2" style="color:#E55733;"></i>Cost tracking and invoicing</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 reveal">
+        <div class="rp-dept-accordion">
+          <button class="rp-dept-btn w-100 d-flex align-items-center justify-content-between px-3 py-3 border" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAcct">
+            <span class="d-flex align-items-center gap-2"><i class="bi bi-calculator" style="color:#E55733;"></i><span class="fw-semibold small">Accounting / Finance</span></span>
+            <i class="bi bi-chevron-down text-muted small"></i>
+          </button>
+          <div id="collapseAcct" class="collapse rp-dept-body px-3 py-3 bg-white border border-top-0">
+            <ul class="list-unstyled small text-muted mb-0">
+              <li class="py-1"><i class="bi bi-check2 me-2" style="color:#E55733;"></i>Rent collection and tracking</li>
+              <li class="py-1"><i class="bi bi-check2 me-2" style="color:#E55733;"></i>Payment reconciliation</li>
+              <li class="py-1"><i class="bi bi-check2 me-2" style="color:#E55733;"></i>Financial reporting</li>
+              <li class="py-1"><i class="bi bi-check2 me-2" style="color:#E55733;"></i>Budget management</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 reveal reveal-delay-1">
+        <div class="rp-dept-accordion">
+          <button class="rp-dept-btn w-100 d-flex align-items-center justify-content-between px-3 py-3 border" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLegal">
+            <span class="d-flex align-items-center gap-2"><i class="bi bi-balance-scale" style="color:#E55733;"></i><span class="fw-semibold small">Legal / Compliance</span></span>
+            <i class="bi bi-chevron-down text-muted small"></i>
+          </button>
+          <div id="collapseLegal" class="collapse rp-dept-body px-3 py-3 bg-white border border-top-0">
+            <ul class="list-unstyled small text-muted mb-0">
+              <li class="py-1"><i class="bi bi-check2 me-2" style="color:#E55733;"></i>Document management</li>
+              <li class="py-1"><i class="bi bi-check2 me-2" style="color:#E55733;"></i>Compliance checklists</li>
+              <li class="py-1"><i class="bi bi-check2 me-2" style="color:#E55733;"></i>Audit trail and records</li>
+              <li class="py-1"><i class="bi bi-check2 me-2" style="color:#E55733;"></i>Legal notice workflows</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 reveal reveal-delay-2">
+        <div class="rp-dept-accordion">
+          <button class="rp-dept-btn w-100 d-flex align-items-center justify-content-between px-3 py-3 border" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHR">
+            <span class="d-flex align-items-center gap-2"><i class="bi bi-person-plus" style="color:#E55733;"></i><span class="fw-semibold small">Recruiting / Hiring / Onboarding</span></span>
+            <i class="bi bi-chevron-down text-muted small"></i>
+          </button>
+          <div id="collapseHR" class="collapse rp-dept-body px-3 py-3 bg-white border border-top-0">
+            <ul class="list-unstyled small text-muted mb-0">
+              <li class="py-1"><i class="bi bi-check2 me-2" style="color:#E55733;"></i>Job posting and tracking</li>
+              <li class="py-1"><i class="bi bi-check2 me-2" style="color:#E55733;"></i>Onboarding task automation</li>
+              <li class="py-1"><i class="bi bi-check2 me-2" style="color:#E55733;"></i>Training workflows</li>
+              <li class="py-1"><i class="bi bi-check2 me-2" style="color:#E55733;"></i>Role and permission setup</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -104,23 +180,30 @@
       </div>
     </div>
     <div class="row g-4 mb-5">
-      {{ $features := slice
-        (dict "title" "One place to start the day"     "sub" "Tasks + comms + priorities in a single dashboard")
-        (dict "title" "AI guidance + cross-checking"   "sub" "Reduces mistakes and provides helpful context")
-        (dict "title" "Standard workflows"             "sub" "New hires become productive faster")
-        (dict "title" "Clear and easier"               "sub" "People don't want to leave because life is better on Revun")
-      }}
-      {{ range $i, $f := $features }}
-      <div class="col-md-6 reveal{{ if gt $i 0 }} reveal-delay-{{ $i }}{{ end }}">
+      <div class="col-md-6 reveal">
         <div class="d-flex align-items-start gap-3 p-3 rounded-3" style="background:#f7f6f2;">
           <i class="bi bi-check-circle-fill mt-1 flex-shrink-0" style="color:#E55733;font-size:1.1rem;"></i>
-          <div>
-            <div class="fw-semibold small mb-1">{{ $f.title }}</div>
-            <div class="text-muted" style="font-size:.8rem;">{{ $f.sub }}</div>
-          </div>
+          <div><div class="fw-semibold small mb-1">One place to start the day</div><div class="text-muted" style="font-size:.8rem;">Tasks + comms + priorities in a single dashboard</div></div>
         </div>
       </div>
-      {{ end }}
+      <div class="col-md-6 reveal reveal-delay-1">
+        <div class="d-flex align-items-start gap-3 p-3 rounded-3" style="background:#f7f6f2;">
+          <i class="bi bi-check-circle-fill mt-1 flex-shrink-0" style="color:#E55733;font-size:1.1rem;"></i>
+          <div><div class="fw-semibold small mb-1">AI guidance + cross-checking</div><div class="text-muted" style="font-size:.8rem;">Reduces mistakes and provides helpful context</div></div>
+        </div>
+      </div>
+      <div class="col-md-6 reveal reveal-delay-2">
+        <div class="d-flex align-items-start gap-3 p-3 rounded-3" style="background:#f7f6f2;">
+          <i class="bi bi-check-circle-fill mt-1 flex-shrink-0" style="color:#E55733;font-size:1.1rem;"></i>
+          <div><div class="fw-semibold small mb-1">Standard workflows</div><div class="text-muted" style="font-size:.8rem;">New hires become productive faster</div></div>
+        </div>
+      </div>
+      <div class="col-md-6 reveal reveal-delay-3">
+        <div class="d-flex align-items-start gap-3 p-3 rounded-3" style="background:#f7f6f2;">
+          <i class="bi bi-check-circle-fill mt-1 flex-shrink-0" style="color:#E55733;font-size:1.1rem;"></i>
+          <div><div class="fw-semibold small mb-1">Clear and easier</div><div class="text-muted" style="font-size:.8rem;">People don't want to leave because life is better on Revun</div></div>
+        </div>
+      </div>
     </div>
 
     <!-- Day in the Life -->
@@ -129,25 +212,26 @@
         <div class="rp-daylife-card border p-4">
           <div class="section-tag text-center d-block mb-1">Schedule</div>
           <h5 class="fw-bold text-center mb-4">A Day in the Life on Revun Pro</h5>
-          {{ $timeline := slice
-            (dict "time" "8:00 AM"  "title" "Morning Dashboard"     "sub" "Review priorities, flagged items, and team status")
-            (dict "time" "9:00 AM"  "title" "Task Queue"            "sub" "Work through assigned tasks with AI guidance and context")
-            (dict "time" "11:00 AM" "title" "Automated Follow-ups"  "sub" "System sends reminders and updates stakeholders automatically")
-            (dict "time" "2:00 PM"  "title" "Approval Routing"      "sub" "Route approvals through proper channels with full audit trail")
-            (dict "time" "5:00 PM"  "title" "End-of-Day Reporting"  "sub" "Automated daily summaries and performance metrics")
-          }}
-          {{ range $timeline }}
-          <div class="rp-timeline-item d-flex align-items-start justify-content-between gap-3 py-3 border-bottom">
-            <div class="d-flex align-items-start gap-3">
-              <i class="bi bi-clock-fill flex-shrink-0 mt-1" style="color:#E55733;"></i>
-              <div>
-                <div class="fw-semibold small">{{ .title }}</div>
-                <div class="text-muted" style="font-size:.8rem;">{{ .sub }}</div>
-              </div>
-            </div>
-            <span class="text-muted small flex-shrink-0 fw-semibold">{{ .time }}</span>
+          <div class="rp-timeline-item d-flex justify-content-between gap-3 py-3 border-bottom">
+            <div class="d-flex gap-3"><i class="bi bi-clock-fill flex-shrink-0 mt-1" style="color:#E55733;"></i><div><div class="fw-semibold small">Morning Dashboard</div><div class="text-muted" style="font-size:.8rem;">Review priorities, flagged items, and team status</div></div></div>
+            <span class="text-muted small flex-shrink-0 fw-semibold">8:00 AM</span>
           </div>
-          {{ end }}
+          <div class="rp-timeline-item d-flex justify-content-between gap-3 py-3 border-bottom">
+            <div class="d-flex gap-3"><i class="bi bi-clock-fill flex-shrink-0 mt-1" style="color:#E55733;"></i><div><div class="fw-semibold small">Task Queue</div><div class="text-muted" style="font-size:.8rem;">Work through assigned tasks with AI guidance and context</div></div></div>
+            <span class="text-muted small flex-shrink-0 fw-semibold">9:00 AM</span>
+          </div>
+          <div class="rp-timeline-item d-flex justify-content-between gap-3 py-3 border-bottom">
+            <div class="d-flex gap-3"><i class="bi bi-clock-fill flex-shrink-0 mt-1" style="color:#E55733;"></i><div><div class="fw-semibold small">Automated Follow-ups</div><div class="text-muted" style="font-size:.8rem;">System sends reminders and updates stakeholders automatically</div></div></div>
+            <span class="text-muted small flex-shrink-0 fw-semibold">11:00 AM</span>
+          </div>
+          <div class="rp-timeline-item d-flex justify-content-between gap-3 py-3 border-bottom">
+            <div class="d-flex gap-3"><i class="bi bi-clock-fill flex-shrink-0 mt-1" style="color:#E55733;"></i><div><div class="fw-semibold small">Approval Routing</div><div class="text-muted" style="font-size:.8rem;">Route approvals through proper channels with full audit trail</div></div></div>
+            <span class="text-muted small flex-shrink-0 fw-semibold">2:00 PM</span>
+          </div>
+          <div class="rp-timeline-item d-flex justify-content-between gap-3 py-3">
+            <div class="d-flex gap-3"><i class="bi bi-clock-fill flex-shrink-0 mt-1" style="color:#E55733;"></i><div><div class="fw-semibold small">End-of-Day Reporting</div><div class="text-muted" style="font-size:.8rem;">Automated daily summaries and performance metrics</div></div></div>
+            <span class="text-muted small flex-shrink-0 fw-semibold">5:00 PM</span>
+          </div>
         </div>
       </div>
     </div>

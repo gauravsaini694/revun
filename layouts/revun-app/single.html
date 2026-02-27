@@ -18,31 +18,48 @@
 <!-- ===== OWNERS ===== -->
 <section class="py-5 bg-light-warm">
   <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-8 text-center mb-5">
-        <div class="ra-section-icon mb-3 reveal"><i class="bi bi-house-door fs-2"></i></div>
-        <div class="section-tag reveal">For Owners</div>
-        <h2 class="fw-bold reveal reveal-delay-1">Owners See Everything Without Chasing Anyone</h2>
-        <p class="text-muted reveal reveal-delay-2">Property owners get complete visibility into their investments with real-time updates and comprehensive reporting.</p>
-      </div>
+    <div class="text-center mb-5">
+      <div class="ra-section-icon mb-3 reveal"><i class="bi bi-house-door fs-2"></i></div>
+      <div class="section-tag reveal">For Owners</div>
+      <h2 class="fw-bold reveal reveal-delay-1">Owners See Everything Without Chasing Anyone</h2>
+      <p class="text-muted reveal reveal-delay-2">Property owners get complete visibility into their investments with real-time updates and comprehensive reporting.</p>
     </div>
     <div class="row g-3 mb-4">
-      {{ $cards := slice
-        (dict "icon" "bi-grid"               "title" "Portfolio View"           "sub" "Current, past, and under management properties all in one place")
-        (dict "icon" "bi-currency-dollar"    "title" "Financial Summaries"      "sub" "Your personal financial performance summaries")
-        (dict "icon" "bi-tools"              "title" "Maintenance Status"       "sub" "Track every request with approved and real-time updates")
-        (dict "icon" "bi-file-earmark-text"  "title" "Document Vault"           "sub" "Leases, invoices, inspection documents, all in one secure place")
-        (dict "icon" "bi-chat-check"         "title" "Verified Communication"   "sub" "Complete history of all interactions and updates")
-      }}
-      {{ range $i, $c := $cards }}
-      <div class="col-sm-6 col-lg-4 reveal{{ if gt $i 0 }} reveal-delay-{{ $i }}{{ end }}">
+      <div class="col-sm-6 col-lg-4 reveal">
         <div class="ra-feature-card p-4 bg-white h-100">
-          <div class="ra-card-icon mb-3"><i class="bi {{ $c.icon }}"></i></div>
-          <div class="fw-semibold mb-2">{{ $c.title }}</div>
-          <p class="text-muted small mb-0">{{ $c.sub }}</p>
+          <div class="ra-card-icon mb-3"><i class="bi bi-grid"></i></div>
+          <div class="fw-semibold mb-2">Portfolio View</div>
+          <p class="text-muted small mb-0">Current, past, and under management properties all in one place</p>
         </div>
       </div>
-      {{ end }}
+      <div class="col-sm-6 col-lg-4 reveal reveal-delay-1">
+        <div class="ra-feature-card p-4 bg-white h-100">
+          <div class="ra-card-icon mb-3"><i class="bi bi-currency-dollar"></i></div>
+          <div class="fw-semibold mb-2">Financial Summaries</div>
+          <p class="text-muted small mb-0">Your personal financial performance summaries</p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-4 reveal reveal-delay-2">
+        <div class="ra-feature-card p-4 bg-white h-100">
+          <div class="ra-card-icon mb-3"><i class="bi bi-tools"></i></div>
+          <div class="fw-semibold mb-2">Maintenance Status</div>
+          <p class="text-muted small mb-0">Track every request with approved and real-time updates</p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-4 reveal">
+        <div class="ra-feature-card p-4 bg-white h-100">
+          <div class="ra-card-icon mb-3"><i class="bi bi-file-earmark-text"></i></div>
+          <div class="fw-semibold mb-2">Document Vault</div>
+          <p class="text-muted small mb-0">Leases, invoices, inspection documents, all in one secure place</p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-4 reveal reveal-delay-1">
+        <div class="ra-feature-card p-4 bg-white h-100">
+          <div class="ra-card-icon mb-3"><i class="bi bi-chat-check"></i></div>
+          <div class="fw-semibold mb-2">Verified Communication</div>
+          <p class="text-muted small mb-0">Complete history of all interactions and updates</p>
+        </div>
+      </div>
     </div>
     <div class="row justify-content-center">
       <div class="col-lg-7 reveal">
@@ -58,31 +75,48 @@
 <!-- ===== TENANTS ===== -->
 <section class="py-5 bg-white">
   <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-8 text-center mb-5">
-        <div class="ra-section-icon mb-3 reveal"><i class="bi bi-heart fs-2"></i></div>
-        <div class="section-tag reveal">For Tenants</div>
-        <h2 class="fw-bold reveal reveal-delay-1">Tenants Feel Informed, Respected, and Taken Care Of</h2>
-        <p class="text-muted reveal reveal-delay-2">A better tenant experience means higher retention, fewer conflicts, and stronger relationships.</p>
-      </div>
+    <div class="text-center mb-5">
+      <div class="ra-section-icon mb-3 reveal"><i class="bi bi-heart fs-2"></i></div>
+      <div class="section-tag reveal">For Tenants</div>
+      <h2 class="fw-bold reveal reveal-delay-1">Tenants Feel Informed, Respected, and Taken Care Of</h2>
+      <p class="text-muted reveal reveal-delay-2">A better tenant experience means higher retention, fewer conflicts, and stronger relationships.</p>
     </div>
     <div class="row g-3 mb-4">
-      {{ $cards := slice
-        (dict "icon" "bi-bell"           "title" "Rent Reminders &amp; Payments"       "sub" "Never miss a payment with automated reminders and easy payment options")
-        (dict "icon" "bi-clipboard-check" "title" "Maintenance Request Tracking"      "sub" "Submit, inspect and track progress with transparency and updates")
-        (dict "icon" "bi-chat-dots"      "title" "Chat History"                       "sub" "All communication, documented and accessible")
-        (dict "icon" "bi-robot"          "title" "AI Help Layer"                      "sub" "Get instant answers to common questions")
-        (dict "icon" "bi-eye"            "title" "Full Transparency"                  "sub" "Give renters complete visibility over all transactions")
-      }}
-      {{ range $i, $c := $cards }}
-      <div class="col-sm-6 col-lg-4 reveal{{ if gt $i 0 }} reveal-delay-{{ $i }}{{ end }}">
+      <div class="col-sm-6 col-lg-4 reveal">
         <div class="ra-feature-card p-4 bg-white h-100">
-          <div class="ra-card-icon mb-3"><i class="bi {{ $c.icon }}"></i></div>
-          <div class="fw-semibold mb-2">{{ $c.title | safeHTML }}</div>
-          <p class="text-muted small mb-0">{{ $c.sub }}</p>
+          <div class="ra-card-icon mb-3"><i class="bi bi-bell"></i></div>
+          <div class="fw-semibold mb-2">Rent Reminders &amp; Payments</div>
+          <p class="text-muted small mb-0">Never miss a payment with automated reminders and easy payment options</p>
         </div>
       </div>
-      {{ end }}
+      <div class="col-sm-6 col-lg-4 reveal reveal-delay-1">
+        <div class="ra-feature-card p-4 bg-white h-100">
+          <div class="ra-card-icon mb-3"><i class="bi bi-clipboard-check"></i></div>
+          <div class="fw-semibold mb-2">Maintenance Request Tracking</div>
+          <p class="text-muted small mb-0">Submit, inspect and track progress with transparency and updates</p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-4 reveal reveal-delay-2">
+        <div class="ra-feature-card p-4 bg-white h-100">
+          <div class="ra-card-icon mb-3"><i class="bi bi-chat-dots"></i></div>
+          <div class="fw-semibold mb-2">Chat History</div>
+          <p class="text-muted small mb-0">All communication, documented and accessible</p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-4 reveal">
+        <div class="ra-feature-card p-4 bg-white h-100">
+          <div class="ra-card-icon mb-3"><i class="bi bi-robot"></i></div>
+          <div class="fw-semibold mb-2">AI Help Layer</div>
+          <p class="text-muted small mb-0">Get instant answers to common questions</p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-4 reveal reveal-delay-1">
+        <div class="ra-feature-card p-4 bg-white h-100">
+          <div class="ra-card-icon mb-3"><i class="bi bi-eye"></i></div>
+          <div class="fw-semibold mb-2">Full Transparency</div>
+          <p class="text-muted small mb-0">Give renters complete visibility over all transactions</p>
+        </div>
+      </div>
     </div>
     <div class="row justify-content-center">
       <div class="col-lg-7 reveal">
@@ -98,31 +132,48 @@
 <!-- ===== VENDORS ===== -->
 <section class="py-5 bg-light-warm">
   <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-8 text-center mb-5">
-        <div class="ra-section-icon mb-3 reveal"><i class="bi bi-wrench-adjustable fs-2"></i></div>
-        <div class="section-tag reveal">For Vendors</div>
-        <h2 class="fw-bold reveal reveal-delay-1">Vendors Get Clear Work Orders and Faster Payments</h2>
-        <p class="text-muted reveal reveal-delay-2">Better vendor relationships mean better service quality and more reliable operations.</p>
-      </div>
+    <div class="text-center mb-5">
+      <div class="ra-section-icon mb-3 reveal"><i class="bi bi-wrench-adjustable fs-2"></i></div>
+      <div class="section-tag reveal">For Vendors</div>
+      <h2 class="fw-bold reveal reveal-delay-1">Vendors Get Clear Work Orders and Faster Payments</h2>
+      <p class="text-muted reveal reveal-delay-2">Better vendor relationships mean better service quality and more reliable operations.</p>
     </div>
     <div class="row g-3">
-      {{ $cards := slice
-        (dict "icon" "bi-file-earmark-ruled"  "title" "Work Order Details"          "sub" "Complete job specifications and requirements")
-        (dict "icon" "bi-box-arrow-in-right"  "title" "Check-In/Out Documentation"  "sub" "Track and document each completion")
-        (dict "icon" "bi-camera"              "title" "Photos &amp; Notes"          "sub" "Upload before/after photos and detailed notes")
-        (dict "icon" "bi-patch-check"         "title" "Approvals &amp; Verification" "sub" "Clear approval process for work completion")
-        (dict "icon" "bi-lightning-charge"    "title" "Faster Payments"             "sub" "Streamlined invoicing and payment workflows")
-      }}
-      {{ range $i, $c := $cards }}
-      <div class="col-sm-6 col-lg-4 reveal{{ if gt $i 0 }} reveal-delay-{{ $i }}{{ end }}">
+      <div class="col-sm-6 col-lg-4 reveal">
         <div class="ra-feature-card p-4 bg-white h-100">
-          <div class="ra-card-icon mb-3"><i class="bi {{ $c.icon }}"></i></div>
-          <div class="fw-semibold mb-2">{{ $c.title | safeHTML }}</div>
-          <p class="text-muted small mb-0">{{ $c.sub }}</p>
+          <div class="ra-card-icon mb-3"><i class="bi bi-file-earmark-ruled"></i></div>
+          <div class="fw-semibold mb-2">Work Order Details</div>
+          <p class="text-muted small mb-0">Complete job specifications and requirements</p>
         </div>
       </div>
-      {{ end }}
+      <div class="col-sm-6 col-lg-4 reveal reveal-delay-1">
+        <div class="ra-feature-card p-4 bg-white h-100">
+          <div class="ra-card-icon mb-3"><i class="bi bi-box-arrow-in-right"></i></div>
+          <div class="fw-semibold mb-2">Check-In/Out Documentation</div>
+          <p class="text-muted small mb-0">Track and document each completion</p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-4 reveal reveal-delay-2">
+        <div class="ra-feature-card p-4 bg-white h-100">
+          <div class="ra-card-icon mb-3"><i class="bi bi-camera"></i></div>
+          <div class="fw-semibold mb-2">Photos &amp; Notes</div>
+          <p class="text-muted small mb-0">Upload before/after photos and detailed notes</p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-4 reveal">
+        <div class="ra-feature-card p-4 bg-white h-100">
+          <div class="ra-card-icon mb-3"><i class="bi bi-patch-check"></i></div>
+          <div class="fw-semibold mb-2">Approvals &amp; Verification</div>
+          <p class="text-muted small mb-0">Clear approval process for work completion</p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-4 reveal reveal-delay-1">
+        <div class="ra-feature-card p-4 bg-white h-100">
+          <div class="ra-card-icon mb-3"><i class="bi bi-lightning-charge"></i></div>
+          <div class="fw-semibold mb-2">Faster Payments</div>
+          <p class="text-muted small mb-0">Streamlined invoicing and payment workflows</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -131,30 +182,36 @@
 <!-- ===== WHY ===== -->
 <section class="py-5 bg-white">
   <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-8 text-center mb-5">
-        <div class="section-tag reveal">Why It Works</div>
-        <h2 class="fw-bold reveal reveal-delay-1">Why Revun App Creates Better Relationships</h2>
-      </div>
+    <div class="text-center mb-5">
+      <div class="section-tag reveal">Why It Works</div>
+      <h2 class="fw-bold reveal reveal-delay-1">Why Revun App Creates Better Relationships</h2>
     </div>
     <div class="row g-4 justify-content-center">
-      {{ $why := slice
-        (dict "icon" "bi-eye"              "title" "Full Transparency"    "sub" "Everyone sees the same information at the same time, eliminating confusion and building trust.")
-        (dict "icon" "bi-chat-left-text"   "title" "Clear Communication"  "sub" "All communication is logged, searchable, and accountable — no more \"he said, she said\".")
-        (dict "icon" "bi-arrow-right-circle" "title" "Faster Resolution"  "sub" "Every request has a clear path to resolution because the information and tools are always there.")
-      }}
-      {{ range $i, $w := $why }}
-      <div class="col-md-4 reveal{{ if gt $i 0 }} reveal-delay-{{ $i }}{{ end }}">
+      <div class="col-md-4 reveal">
         <div class="ra-why-card text-center p-4 h-100">
-          <div class="ra-why-icon mb-3"><i class="bi {{ $w.icon }} fs-3"></i></div>
-          <h6 class="fw-bold mb-2">{{ $w.title }}</h6>
-          <p class="text-muted small mb-0">{{ $w.sub }}</p>
+          <div class="ra-why-icon mb-3"><i class="bi bi-eye fs-3"></i></div>
+          <h6 class="fw-bold mb-2">Full Transparency</h6>
+          <p class="text-muted small mb-0">Everyone sees the same information at the same time, eliminating confusion and building trust.</p>
         </div>
       </div>
-      {{ end }}
+      <div class="col-md-4 reveal reveal-delay-1">
+        <div class="ra-why-card text-center p-4 h-100">
+          <div class="ra-why-icon mb-3"><i class="bi bi-chat-left-text fs-3"></i></div>
+          <h6 class="fw-bold mb-2">Clear Communication</h6>
+          <p class="text-muted small mb-0">All communication is logged, searchable, and accountable — no more "he said, she said".</p>
+        </div>
+      </div>
+      <div class="col-md-4 reveal reveal-delay-2">
+        <div class="ra-why-card text-center p-4 h-100">
+          <div class="ra-why-icon mb-3"><i class="bi bi-arrow-right-circle fs-3"></i></div>
+          <h6 class="fw-bold mb-2">Faster Resolution</h6>
+          <p class="text-muted small mb-0">Every request has a clear path to resolution because the information and tools are always there.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
+
 
 <!-- ===== CTA ===== -->
 <section class="rp-cta-section text-white text-center">

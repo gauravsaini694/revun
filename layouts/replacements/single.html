@@ -17,34 +17,80 @@
 <!-- ===== WHAT REVUN REPLACES ===== -->
 <section class="py-5 bg-light-warm">
   <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-8 text-center mb-5">
-        <div class="section-tag reveal">Tool Consolidation</div>
-        <h2 class="fw-bold reveal reveal-delay-1">What Revun Replaces</h2>
-        <p class="text-muted reveal reveal-delay-2">Stop paying for multiple disconnected tools. Revun brings everything into one unified operating system.</p>
-      </div>
+    <div class="text-center mb-5">
+      <div class="section-tag reveal">Tool Consolidation</div>
+      <h2 class="fw-bold reveal reveal-delay-1">What Revun Replaces</h2>
+      <p class="text-muted reveal reveal-delay-2">Stop paying for multiple disconnected tools. Revun brings everything into one unified operating system.</p>
     </div>
     <div class="row g-3 mb-4">
-      {{ $replaces := slice
-        (dict "title" "Property Management Systems" "items" (slice "AppFolio" "PropertyWare" "Yardi (or can replace or integrate)"))
-        (dict "title" "Communication"               "items" (slice "RingCentral" "Slack" "Client-style internal messaging tools"))
-        (dict "title" "CRM &amp; Operations"        "items" (slice "Salesforce" "Task management platforms" "Master systems"))
-        (dict "title" "Maintenance Platforms"       "items" (slice "Standalone work order systems" "Vendor dispatch tools"))
-        (dict "title" "Documents"                   "items" (slice "Scattered emails + legal fragments" "Disconnected document storage"))
-      }}
-      {{ range $i, $r := $replaces }}
-      <div class="col-md-6 col-lg-4 reveal{{ if gt $i 0 }} reveal-delay-{{ mod $i 3 }}{{ end }}">
+
+      <div class="col-md-6 col-lg-4 reveal">
         <div class="rep-replace-card p-4 bg-white h-100">
           <div class="d-flex align-items-center gap-2 mb-3">
             <span class="rep-x-badge"><i class="bi bi-x-lg"></i></span>
-            <span class="fw-semibold small">{{ $r.title | safeHTML }}</span>
+            <span class="fw-semibold small">Property Management Systems</span>
           </div>
           <ul class="list-unstyled small text-muted mb-0">
-            {{ range $r.items }}<li class="py-1">• {{ . }}</li>{{ end }}
+            <li class="py-1">• AppFolio</li>
+            <li class="py-1">• PropertyWare</li>
+            <li class="py-1">• Yardi (or can replace or integrate)</li>
           </ul>
         </div>
       </div>
-      {{ end }}
+
+      <div class="col-md-6 col-lg-4 reveal reveal-delay-1">
+        <div class="rep-replace-card p-4 bg-white h-100">
+          <div class="d-flex align-items-center gap-2 mb-3">
+            <span class="rep-x-badge"><i class="bi bi-x-lg"></i></span>
+            <span class="fw-semibold small">Communication</span>
+          </div>
+          <ul class="list-unstyled small text-muted mb-0">
+            <li class="py-1">• RingCentral</li>
+            <li class="py-1">• Slack</li>
+            <li class="py-1">• Client-style internal messaging tools</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 reveal reveal-delay-2">
+        <div class="rep-replace-card p-4 bg-white h-100">
+          <div class="d-flex align-items-center gap-2 mb-3">
+            <span class="rep-x-badge"><i class="bi bi-x-lg"></i></span>
+            <span class="fw-semibold small">CRM &amp; Operations</span>
+          </div>
+          <ul class="list-unstyled small text-muted mb-0">
+            <li class="py-1">• Salesforce</li>
+            <li class="py-1">• Task management platforms</li>
+            <li class="py-1">• Master systems</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 reveal">
+        <div class="rep-replace-card p-4 bg-white h-100">
+          <div class="d-flex align-items-center gap-2 mb-3">
+            <span class="rep-x-badge"><i class="bi bi-x-lg"></i></span>
+            <span class="fw-semibold small">Maintenance Platforms</span>
+          </div>
+          <ul class="list-unstyled small text-muted mb-0">
+            <li class="py-1">• Standalone work order systems</li>
+            <li class="py-1">• Vendor dispatch tools</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 reveal reveal-delay-1">
+        <div class="rep-replace-card p-4 bg-white h-100">
+          <div class="d-flex align-items-center gap-2 mb-3">
+            <span class="rep-x-badge"><i class="bi bi-x-lg"></i></span>
+            <span class="fw-semibold small">Documents</span>
+          </div>
+          <ul class="list-unstyled small text-muted mb-0">
+            <li class="py-1">• Scattered emails + legal fragments</li>
+            <li class="py-1">• Disconnected document storage</li>
+          </ul>
+        </div>
+      </div>
     </div>
 
     <!-- Dark Banner -->
@@ -64,12 +110,10 @@
 <!-- ===== SEE THE SAVINGS ===== -->
 <section class="py-5 bg-white">
   <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-8 text-center mb-5">
-        <div class="section-tag reveal">Cost Comparison</div>
-        <h2 class="fw-bold reveal reveal-delay-1">See the Savings</h2>
-        <p class="text-muted reveal reveal-delay-2">Most companies save thousands per month by consolidating their tech stack into Revun.</p>
-      </div>
+    <div class="text-center mb-5">
+      <div class="section-tag reveal">Cost Comparison</div>
+      <h2 class="fw-bold reveal reveal-delay-1">See the Savings</h2>
+      <p class="text-muted reveal reveal-delay-2">Most companies save thousands per month by consolidating their tech stack into Revun.</p>
     </div>
     <div class="row g-4 mb-4">
       <div class="col-md-6 reveal">
@@ -106,34 +150,51 @@
 <!-- ===== DEEP INTEGRATIONS ===== -->
 <section class="py-5 bg-light-warm">
   <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-8 text-center mb-5">
-        <div class="section-tag reveal">Integrations</div>
-        <h2 class="fw-bold reveal reveal-delay-1">Deep Integrations Where It Matters</h2>
-        <p class="text-muted reveal reveal-delay-2">While Revun replaces most of your stack, it integrates seamlessly with critical systems where needed.</p>
-      </div>
+    <div class="text-center mb-5">
+      <div class="section-tag reveal">Integrations</div>
+      <h2 class="fw-bold reveal reveal-delay-1">Deep Integrations Where It Matters</h2>
+      <p class="text-muted reveal reveal-delay-2">While Revun replaces most of your stack, it integrates seamlessly with critical systems where needed.</p>
     </div>
     <div class="row g-3">
-      {{ $integ := slice
-        (dict "title" "Payments"                    "sub1" "Stripe"       "sub2" "Secure payment processing and transaction reporting")
-        (dict "title" "Accounting"                  "sub1" "QuickBooks"   "sub2" "Financial data sync and reconciliation")
-        (dict "title" "Enterprise Property Systems" "sub1" ""             "sub2" "Deep integration with existing enterprise systems")
-        (dict "title" "Identity &amp; Verification" "sub1" "Configurable" "sub2" "Configurable providers")
-        (dict "title" "Banking &amp; Verification"  "sub1" ""             "sub2" "Bank account verification and ACH processing")
-        (dict "title" "CRM Sync"                    "sub1" "Configurable" "sub2" "Works with existing CRM systems")
-      }}
-      {{ range $i, $g := $integ }}
-      <div class="col-md-6 col-lg-4 reveal{{ if gt $i 0 }} reveal-delay-{{ mod $i 3 }}{{ end }}">
+      <div class="col-md-6 col-lg-4 reveal">
         <div class="rep-integ-card p-4 bg-white h-100">
-          <div class="d-flex align-items-center gap-2 mb-2">
-            <i class="bi bi-check2-circle" style="color:#E55733;font-size:1.1rem;"></i>
-            <span class="fw-semibold small">{{ $g.title | safeHTML }}</span>
-          </div>
-          {{ if $g.sub1 }}<p class="text-muted small mb-1 ms-4">{{ $g.sub1 }}</p>{{ end }}
-          <p class="text-muted small mb-0 ms-4">{{ $g.sub2 }}</p>
+          <div class="d-flex align-items-center gap-2 mb-2"><i class="bi bi-check2-circle" style="color:#E55733;font-size:1.1rem;"></i><span class="fw-semibold small">Payments</span></div>
+          <p class="text-muted small mb-1 ms-4">Stripe</p>
+          <p class="text-muted small mb-0 ms-4">Secure payment processing and transaction reporting</p>
         </div>
       </div>
-      {{ end }}
+      <div class="col-md-6 col-lg-4 reveal reveal-delay-1">
+        <div class="rep-integ-card p-4 bg-white h-100">
+          <div class="d-flex align-items-center gap-2 mb-2"><i class="bi bi-check2-circle" style="color:#E55733;font-size:1.1rem;"></i><span class="fw-semibold small">Accounting</span></div>
+          <p class="text-muted small mb-1 ms-4">QuickBooks</p>
+          <p class="text-muted small mb-0 ms-4">Financial data sync and reconciliation</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 reveal reveal-delay-2">
+        <div class="rep-integ-card p-4 bg-white h-100">
+          <div class="d-flex align-items-center gap-2 mb-2"><i class="bi bi-check2-circle" style="color:#E55733;font-size:1.1rem;"></i><span class="fw-semibold small">Enterprise Property Systems</span></div>
+          <p class="text-muted small mb-0 ms-4">Deep integration with existing enterprise systems</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 reveal">
+        <div class="rep-integ-card p-4 bg-white h-100">
+          <div class="d-flex align-items-center gap-2 mb-2"><i class="bi bi-check2-circle" style="color:#E55733;font-size:1.1rem;"></i><span class="fw-semibold small">Identity &amp; Verification</span></div>
+          <p class="text-muted small mb-0 ms-4">Configurable providers</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 reveal reveal-delay-1">
+        <div class="rep-integ-card p-4 bg-white h-100">
+          <div class="d-flex align-items-center gap-2 mb-2"><i class="bi bi-check2-circle" style="color:#E55733;font-size:1.1rem;"></i><span class="fw-semibold small">Banking &amp; Verification</span></div>
+          <p class="text-muted small mb-0 ms-4">Bank account verification and ACH processing</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 reveal reveal-delay-2">
+        <div class="rep-integ-card p-4 bg-white h-100">
+          <div class="d-flex align-items-center gap-2 mb-2"><i class="bi bi-check2-circle" style="color:#E55733;font-size:1.1rem;"></i><span class="fw-semibold small">CRM Sync</span></div>
+          <p class="text-muted small mb-1 ms-4">Configurable</p>
+          <p class="text-muted small mb-0 ms-4">Works with existing CRM systems</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
