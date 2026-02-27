@@ -1,0 +1,156 @@
+{{ define "main" }}
+
+<!-- ===== HERO ===== -->
+<section class="ai-hero text-center">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-7">
+        <div class="ai-hero-icon mb-3 reveal"><i class="bi bi-lightning-charge-fill fs-2"></i></div>
+        <div class="section-tag reveal">AI &amp; Automation</div>
+        <h1 class="ai-hero-title fw-bold mb-3 reveal reveal-delay-1">AI That Completes Tasks — Not Just Reports on Them</h1>
+        <p class="ai-hero-sub text-muted mx-auto mb-4 reveal reveal-delay-2">Revun automates repetitive work across leasing, maintenance, property operations, customer communication, and internal accountability — so your team executes faster with fewer errors.</p>
+        <a href="/book-demo" class="btn btn-primary btn-hero-cta px-4 py-2 reveal reveal-delay-3">See AI in Action &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== HOW IT WORKS ===== -->
+<section class="py-5 bg-light-warm">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center mb-5">
+        <div class="section-tag reveal">The Engine</div>
+        <h2 class="fw-bold reveal reveal-delay-1">How Revun's Task Completion Engine Works</h2>
+      </div>
+    </div>
+    <div class="row g-4 justify-content-center">
+      {{ $steps := slice
+        (dict "n" "1" "title" "Detects Work"         "sub" "AI identifies tasks from incoming requests, messages, deadlines, and triggers")
+        (dict "n" "2" "title" "Executes Actions"     "sub" "System completes routine tasks automatically or routes them with full context")
+        (dict "n" "3" "title" "Verifies Completion"  "sub" "AI confirms work is done correctly and documents everything for audit trails")
+      }}
+      {{ range $i, $s := $steps }}
+      <div class="col-md-4 reveal{{ if gt $i 0 }} reveal-delay-{{ $i }}{{ end }}">
+        <div class="ai-step-card text-center p-4 bg-white h-100">
+          <div class="ai-step-num mb-3">{{ $s.n }}</div>
+          <h6 class="fw-bold mb-2">{{ $s.title }}</h6>
+          <p class="text-muted small mb-0">{{ $s.sub }}</p>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== AUTOMATIONS ===== -->
+<section class="py-5 bg-white">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center mb-5">
+        <div class="section-tag reveal">End-to-End</div>
+        <h2 class="fw-bold reveal reveal-delay-1">Automations Revun Runs End-to-End</h2>
+        <p class="text-muted reveal reveal-delay-2">These aren't just notifications — these are completed tasks that drive operations forward.</p>
+      </div>
+    </div>
+    <div class="row g-3">
+      {{ $cats := slice
+        (dict "title" "Payments &amp; Collections" "items" (slice "Rent reminders" "Overdue sequences" "Payment links" "Escalation workflows" "Confirmation receipts"))
+        (dict "title" "Leasing"                    "items" (slice "Lead capture + routing" "Showing scheduling workflows" "Application checklist automation" "Offer/package completion" "Lease generation + signature routing"))
+        (dict "title" "Maintenance"                "items" (slice "Request intake + categorization" "Dispatch workflows" "Quote approvals" "Vendor reminders" "Completion verification + documentation"))
+        (dict "title" "Legal &amp; Compliance"     "items" (slice "Notice workflows" "Required document checklists" "Filing readiness packs" "Evidence packaging and audit logs"))
+        (dict "title" "Marketing &amp; Listings"   "items" (slice "Listing creation workflows" "Syndication to listing platforms" "Social media distribution workflows" "Lead intake and follow-up routing"))
+        (dict "title" "Recruiting"                 "items" (slice "Job postication" "Applicant pipeline routing" "Interview scheduling workflows" "Onboarding task sequences"))
+      }}
+      {{ range $i, $c := $cats }}
+      <div class="col-md-6 col-lg-4 reveal{{ if gt $i 0 }} reveal-delay-{{ mod $i 3 }}{{ end }}">
+        <div class="ai-auto-card p-4 h-100">
+          <h6 class="ai-auto-title fw-bold mb-3">{{ $c.title | safeHTML }}</h6>
+          <ul class="list-unstyled ai-auto-list small text-muted mb-0">
+            {{ range $c.items }}<li><i class="bi bi-check-circle-fill me-2" style="color:#E55733;"></i>{{ . }}</li>{{ end }}
+          </ul>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== WHAT IT MEANS ===== -->
+<section class="py-5 bg-light-warm">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center mb-5">
+        <div class="section-tag reveal">The Impact</div>
+        <h2 class="fw-bold reveal reveal-delay-1">What This Means for Your Operations</h2>
+      </div>
+    </div>
+    <div class="row g-3">
+      {{ $means := slice
+        (dict "title" "Massive Time Savings"              "sub" "Tasks that took hours now take minutes. Workflows that required multiple handoffs now run automatically from start to finish.")
+        (dict "title" "Fewer Errors"                      "sub" "AI cross-checks work, catches mistakes before they happen, and ensures consistency across all operations.")
+        (dict "title" "Better Service Quality"            "sub" "Nothing falls through the cracks. Every request gets routed, tracked, and completed with full accountability.")
+        (dict "title" "Team Can Focus on High-Value Work" "sub" "When routine tasks are automated, your team can focus on relationships, strategy, and complex problem-solving.")
+      }}
+      {{ range $i, $m := $means }}
+      <div class="col-md-6 reveal{{ if gt $i 0 }} reveal-delay-{{ $i }}{{ end }}">
+        <div class="ai-means-card p-4 bg-white h-100">
+          <h6 class="fw-bold mb-2">{{ $m.title }}</h6>
+          <p class="text-muted small mb-0">{{ $m.sub }}</p>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== OPERATE ANYWHERE ===== -->
+<section class="py-5 bg-white text-center">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-7 mb-5">
+        <div class="ai-hero-icon mb-3 reveal"><i class="bi bi-globe2 fs-2"></i></div>
+        <div class="section-tag reveal">Global Ready</div>
+        <h2 class="fw-bold reveal reveal-delay-1">Operate Anywhere — With Standards Built In</h2>
+        <p class="text-muted reveal reveal-delay-2">Revun is designed to standardize best practices while allowing rules and documents to be configured by region. <span style="color:#E55733;font-weight:600;">This enables consistent service quality across provinces/states/countries.</span></p>
+      </div>
+    </div>
+    <div class="row g-3 justify-content-center">
+      {{ $global := slice
+        (dict "title" "Any Country"        "sub" "Configurable for regional requirements")
+        (dict "title" "Any Province/State" "sub" "Local compliance workflows built in")
+        (dict "title" "Any Portfolio"      "sub" "Scales from small to enterprise")
+      }}
+      {{ range $i, $g := $global }}
+      <div class="col-md-4 reveal{{ if gt $i 0 }} reveal-delay-{{ $i }}{{ end }}">
+        <div class="ai-global-card p-4 bg-light-warm h-100">
+          <h6 class="fw-bold mb-2">{{ $g.title }}</h6>
+          <p class="text-muted small mb-0">{{ $g.sub }}</p>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="rp-cta-section text-white text-center">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-6">
+        <div class="section-tag reveal" style="color:#E55733;">Get Started</div>
+        <h2 class="fw-bold text-white reveal reveal-delay-1">See How Much Time You Can Save</h2>
+        <p class="text-white-60 mb-4 reveal reveal-delay-2">In a 30-minute demo, we'll show you exactly how Revun automates work in your specific operation.</p>
+        <div class="d-flex justify-content-center gap-3 flex-wrap reveal reveal-delay-3">
+          <a href="/book-demo" class="btn btn-primary btn-hero-cta px-4 py-2">Book a Demo &rarr;</a>
+          <a href="/pricing"   class="btn btn-outline-light px-4 py-2 fw-semibold">Calculate Savings</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}

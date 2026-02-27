@@ -1,0 +1,251 @@
+{{ define "main" }}
+
+<!-- ===== HERO ===== -->
+<section class="pr-hero text-center py-5">
+  <div class="container py-3">
+    <div class="row justify-content-center">
+      <div class="col-lg-7">
+        <h1 class="pr-hero-title fw-bold mb-3">Pricing That Pays for Itself</h1>
+        <p class="text-muted mx-auto" style="max-width:560px;font-size:.95rem;line-height:1.7;">
+          Companies adopt Revun to eliminate tool sprawl, automate tasks, and create full operational control. The savings show up in software spend, payroll efficiency, and execution speed.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== CALCULATOR ===== -->
+<section class="pr-calc-section py-5 bg-light-blue">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-7 text-center mb-4">
+        <div class="pr-calc-icon mb-3"><i class="bi bi-calculator fs-2 text-primary"></i></div>
+        <h2 class="fw-bold mb-2">Calculate Your Savings</h2>
+        <p class="text-muted small">Estimate how much you could save with Revun</p>
+      </div>
+      <div class="col-lg-7">
+        <div class="pr-calc-card bg-white border rounded-3 p-4">
+
+          <div class="mb-4">
+            <label class="form-label small fw-semibold">Number of Units: <span id="unitsVal" class="text-primary">100</span></label>
+            <input type="range" class="form-range pr-range" id="units" min="10" max="1000" value="100"
+              oninput="document.getElementById('unitsVal').textContent=this.value; calcSavings()">
+          </div>
+          <div class="mb-4">
+            <label class="form-label small fw-semibold">Number of Staff: <span id="staffVal" class="text-primary">10</span></label>
+            <input type="range" class="form-range pr-range" id="staff" min="1" max="100" value="10"
+              oninput="document.getElementById('staffVal').textContent=this.value; calcSavings()">
+          </div>
+          <div class="mb-4">
+            <label class="form-label small fw-semibold">Current Tools Used: <span id="toolsVal" class="text-primary">6</span></label>
+            <input type="range" class="form-range pr-range" id="tools" min="1" max="20" value="6"
+              oninput="document.getElementById('toolsVal').textContent=this.value; calcSavings()">
+          </div>
+
+          <div class="pr-results-box rounded-3 p-3 mt-2">
+            <p class="fw-semibold small mb-3 text-center">Estimated Monthly Impact</p>
+            <div class="row g-3 text-center">
+              <div class="col-4">
+                <div class="pr-result-num fw-bold" id="softwareSave">$1,200</div>
+                <div class="text-muted" style="font-size:.72rem;">Software Savings</div>
+              </div>
+              <div class="col-4">
+                <div class="pr-result-num fw-bold" id="hoursSave">250 hrs</div>
+                <div class="text-muted" style="font-size:.72rem;">Hours Saved/Month</div>
+              </div>
+              <div class="col-4">
+                <div class="pr-result-num fw-bold" id="totalValue">$7,450</div>
+                <div class="text-muted" style="font-size:.72rem;">Total Monthly Value</div>
+              </div>
+            </div>
+          </div>
+          <p class="text-muted mt-3 mb-0" style="font-size:.72rem;line-height:1.5;">
+            * Actual results vary by portfolio, workflow configuration, and usage. This calculator provides estimates based on industry averages.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== CHOOSE YOUR PLAN ===== -->
+<section class="pr-plans-section py-5 bg-white">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-9 text-center mb-5">
+        <h2 class="fw-bold mb-2">Choose Your Plan</h2>
+        <p class="text-muted">Select the tier that matches your operation size and complexity</p>
+      </div>
+    </div>
+    <div class="row g-4 align-items-stretch justify-content-center">
+
+      <!-- Starter -->
+      <div class="col-md-4">
+        <div class="pr-plan-card p-4 border rounded-3 h-100 d-flex flex-column">
+          <h5 class="fw-bold mb-1">Starter</h5>
+          <p class="text-muted small mb-3">For smaller portfolios</p>
+          <ul class="list-unstyled pr-plan-list small text-muted mb-4 flex-grow-1">
+            <li><i class="bi bi-check2 text-primary me-2"></i>Manual Processes &amp; rules</li>
+            <li><i class="bi bi-check2 text-primary me-2"></i>Basic automations</li>
+            <li><i class="bi bi-check2 text-primary me-2"></i>Core integrations (Stripe, QuickBooks)</li>
+            <li><i class="bi bi-check2 text-primary me-2"></i>Standard support</li>
+            <li><i class="bi bi-check2 text-primary me-2"></i>Up to 50 units</li>
+            <li><i class="bi bi-check2 text-primary me-2"></i>Up to 15 staff members</li>
+          </ul>
+          <a href="/book-demo" class="btn btn-outline-primary w-100 fw-semibold">Request Pricing</a>
+        </div>
+      </div>
+
+      <!-- Growth (Popular) -->
+      <div class="col-md-4">
+        <div class="pr-plan-card pr-plan-featured p-4 rounded-3 h-100 d-flex flex-column">
+          <div class="pr-popular-badge mb-2">MOST POPULAR</div>
+          <h5 class="fw-bold mb-1 text-white">Growth</h5>
+          <p class="mb-3" style="color:rgba(255,255,255,.65);font-size:.85rem;">The most popular option</p>
+          <ul class="list-unstyled pr-plan-list small mb-4 flex-grow-1" style="color:rgba(255,255,255,.85);">
+            <li><i class="bi bi-check2 me-2" style="color:#93c5fd;"></i>Everything in Starter</li>
+            <li><i class="bi bi-check2 me-2" style="color:#93c5fd;"></i>Unlimited properties</li>
+            <li><i class="bi bi-check2 me-2" style="color:#93c5fd;"></i>Department-level permissions</li>
+            <li><i class="bi bi-check2 me-2" style="color:#93c5fd;"></i>Advanced integrations</li>
+            <li><i class="bi bi-check2 me-2" style="color:#93c5fd;"></i>Priority support</li>
+            <li><i class="bi bi-check2 me-2" style="color:#93c5fd;"></i>Up to 500 units</li>
+            <li><i class="bi bi-check2 me-2" style="color:#93c5fd;"></i>Up to 50 staff members</li>
+            <li><i class="bi bi-check2 me-2" style="color:#93c5fd;"></i>Custom workflows</li>
+            <li><i class="bi bi-check2 me-2" style="color:#93c5fd;"></i>Advanced reporting</li>
+          </ul>
+          <a href="/book-demo" class="btn btn-light w-100 fw-bold text-primary">Request Pricing</a>
+        </div>
+      </div>
+
+      <!-- Enterprise -->
+      <div class="col-md-4">
+        <div class="pr-plan-card p-4 border rounded-3 h-100 d-flex flex-column">
+          <h5 class="fw-bold mb-1">Enterprise</h5>
+          <p class="text-muted small mb-3">For complex multi-department orgs</p>
+          <ul class="list-unstyled pr-plan-list small text-muted mb-4 flex-grow-1">
+            <li><i class="bi bi-check2 text-primary me-2"></i>Everything in Growth</li>
+            <li><i class="bi bi-check2 text-primary me-2"></i>Full automation suite</li>
+            <li><i class="bi bi-check2 text-primary me-2"></i>Custom role configurations</li>
+            <li><i class="bi bi-check2 text-primary me-2"></i>Enterprise integrations</li>
+            <li><i class="bi bi-check2 text-primary me-2"></i>Dedicated support</li>
+            <li><i class="bi bi-check2 text-primary me-2"></i>White-glove implementation</li>
+            <li><i class="bi bi-check2 text-primary me-2"></i>Dedicated success manager</li>
+            <li><i class="bi bi-check2 text-primary me-2"></i>Custom regional workflows</li>
+            <li><i class="bi bi-check2 text-primary me-2"></i>Dedicated account manager</li>
+          </ul>
+          <a href="/book-demo" class="btn btn-outline-primary w-100 fw-semibold">Request Pricing</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== OPTIONAL ADD-ONS ===== -->
+<section class="pr-addons-section py-5 bg-light-blue">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center mb-5">
+        <h2 class="fw-bold mb-2">Optional Add-ons</h2>
+        <p class="text-muted">Enhance your Revun experience with these additional capabilities</p>
+      </div>
+    </div>
+    <div class="row g-3 justify-content-center">
+      <div class="col-md-6">
+        <div class="pr-addon-card p-4 bg-white border rounded-3 h-100">
+          <h6 class="fw-bold mb-2">Advanced Automation Packs</h6>
+          <p class="text-muted small mb-0">Industry-specific automations and flows</p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="pr-addon-card p-4 bg-white border rounded-3 h-100">
+          <h6 class="fw-bold mb-2">Custom Workflows by Region</h6>
+          <p class="text-muted small mb-0">Compliance-ready workflows for specific jurisdictions</p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="pr-addon-card p-4 bg-white border rounded-3 h-100">
+          <h6 class="fw-bold mb-2">Enterprise Reporting</h6>
+          <p class="text-muted small mb-0">Advanced analytics and custom dashboards</p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="pr-addon-card p-4 bg-white border rounded-3 h-100">
+          <h6 class="fw-bold mb-2">Dedicated Implementation</h6>
+          <p class="text-muted small mb-0">White-glove onboarding and training</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== WHY MAKES FINANCIAL SENSE ===== -->
+<section class="pr-financial-section py-5 bg-white">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center mb-5">
+        <h2 class="fw-bold">Why Revun Makes Financial Sense</h2>
+      </div>
+    </div>
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-4">
+        <div class="text-center">
+          <div class="pr-fin-icon mb-3"><i class="bi bi-piggy-bank fs-3 text-primary"></i></div>
+          <h6 class="fw-bold mb-2">Direct Savings</h6>
+          <p class="text-muted small">Replace 12–15 tools with one platform and save hundreds per month.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="text-center">
+          <div class="pr-fin-icon mb-3"><i class="bi bi-graph-up-arrow fs-3 text-primary"></i></div>
+          <h6 class="fw-bold mb-2">Efficiency Gains</h6>
+          <p class="text-muted small">Automate and complete thousands of hours of repetitive tasks.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="text-center">
+          <div class="pr-fin-icon mb-3"><i class="bi bi-trophy fs-3 text-primary"></i></div>
+          <h6 class="fw-bold mb-2">Better Outcomes</h6>
+          <p class="text-muted small">Fewer mistakes, fewer errors, and higher satisfaction scores.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="rp-cta-section text-white text-center">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-6">
+        <div class="section-tag reveal" style="color:#E55733;">Get Started</div>
+        <h2 class="fw-bold text-white reveal reveal-delay-1">Ready to See Your Exact Pricing?</h2>
+        <p class="text-white-60 mb-4 reveal reveal-delay-2">We'll review your operation and show you exactly how much you'll save with Revun.</p>
+        <div class="d-flex justify-content-center gap-3 flex-wrap reveal reveal-delay-3">
+          <a href="/book-demo" class="btn btn-primary btn-hero-cta px-4 py-2">Book a Demo &rarr;</a>
+          <a href="/pricing"   class="btn btn-outline-light px-4 py-2 fw-semibold">Explore Platform</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+function calcSavings() {
+  var units = parseInt(document.getElementById('units').value);
+  var staff = parseInt(document.getElementById('staff').value);
+  var tools = parseInt(document.getElementById('tools').value);
+  var software = Math.round(tools * 120 * (units / 100));
+  var hours = Math.round(staff * 25);
+  var total = software + (hours * 22);
+  document.getElementById('softwareSave').textContent = '$' + software.toLocaleString();
+  document.getElementById('hoursSave').textContent = hours + ' hrs';
+  document.getElementById('totalValue').textContent = '$' + total.toLocaleString();
+}
+</script>
+
+{{ end }}

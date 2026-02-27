@@ -1,0 +1,133 @@
+{{ define "main" }}
+
+<!-- ===== BOOK DEMO PAGE ===== -->
+<section class="bd-page py-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-9 text-center mb-5">
+        <h1 class="bd-title fw-bold mb-3">See Revun Run a Real Operation</h1>
+        <p class="text-muted mx-auto" style="max-width:560px;font-size:.95rem;line-height:1.7;">
+          If you operate in property management, leasing, maintenance, or brokerage operations, Revun will change how your organization executes.
+        </p>
+      </div>
+    </div>
+
+    <div class="row g-4 justify-content-center">
+
+      <!-- LEFT: Form -->
+      <div class="col-lg-5">
+        <div class="bd-form-card p-4 border rounded-3 bg-white">
+          <h5 class="fw-bold mb-4">Request a Demo</h5>
+          <form>
+            <div class="mb-3">
+              <label class="form-label small fw-semibold">Name <span class="text-danger">*</span></label>
+              <input type="text" class="form-control bd-input" placeholder="John Smith">
+            </div>
+            <div class="mb-3">
+              <label class="form-label small fw-semibold">Email <span class="text-danger">*</span></label>
+              <input type="email" class="form-control bd-input" placeholder="john@company.com">
+            </div>
+            <div class="mb-3">
+              <label class="form-label small fw-semibold">Company <span class="text-danger">*</span></label>
+              <input type="text" class="form-control bd-input" placeholder="Company Name">
+            </div>
+            <div class="mb-3">
+              <label class="form-label small fw-semibold">Role <span class="text-danger">*</span></label>
+              <select class="form-select bd-input">
+                <option value="" disabled selected>Select your role</option>
+                <option>CEO / COO / CFO</option>
+                <option>Property Manager</option>
+                <option>Operations Manager</option>
+                <option>Leasing Agent</option>
+                <option>Accountant</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label class="form-label small fw-semibold">Region(s) Operated <span class="text-danger">*</span></label>
+              <input type="text" class="form-control bd-input" placeholder="e.g., California, Ontario, Texas">
+            </div>
+            <div class="mb-4">
+              <label class="form-label small fw-semibold">Portfolio Size <span class="text-danger">*</span></label>
+              <select class="form-select bd-input">
+                <option value="" disabled selected>Select portfolio size</option>
+                <option>1–25 units</option>
+                <option>26–100 units</option>
+                <option>101–500 units</option>
+                <option>500+ units</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary w-100 py-2 fw-semibold">Book Demo &rarr;</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- RIGHT: What Happens + Why -->
+      <div class="col-lg-4">
+
+        <!-- What Happens Next -->
+        <div class="bd-next-card p-4 rounded-3 mb-3" style="background:#eff6ff;border:1px solid #dbeafe;">
+          <h6 class="fw-bold mb-4">What Happens Next</h6>
+
+          <div class="bd-step d-flex align-items-start gap-3 mb-3">
+            <div class="bd-step-num flex-shrink-0">1</div>
+            <div>
+              <div class="fw-semibold small">30-Minute Walkthrough</div>
+              <div class="text-muted" style="font-size:.8rem;">We'll show you how Revun runs operations in your specific context</div>
+            </div>
+          </div>
+
+          <div class="bd-step d-flex align-items-start gap-3 mb-3">
+            <div class="bd-step-num flex-shrink-0">2</div>
+            <div>
+              <div class="fw-semibold small">Cost Savings Review</div>
+              <div class="text-muted" style="font-size:.8rem;">Calculate your exact software and efficiency savings</div>
+            </div>
+          </div>
+
+          <div class="bd-step d-flex align-items-start gap-3 mb-3">
+            <div class="bd-step-num flex-shrink-0">3</div>
+            <div>
+              <div class="fw-semibold small">Workflow Mapping</div>
+              <div class="text-muted" style="font-size:.8rem;">Understand how your processes will run on Revun</div>
+            </div>
+          </div>
+
+          <div class="bd-step d-flex align-items-start gap-3">
+            <div class="bd-step-num flex-shrink-0">4</div>
+            <div>
+              <div class="fw-semibold small">Implementation Plan</div>
+              <div class="text-muted" style="font-size:.8rem;">Get a clear roadmap for rolling out Revun in your organization</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Why Companies Choose Revun -->
+        <div class="bd-why-card p-4 border rounded-3 bg-white">
+          <h6 class="fw-bold mb-3">Why Companies Choose Revun</h6>
+          <ul class="list-unstyled mb-0">
+            <li class="d-flex align-items-center gap-2 py-2 border-bottom small text-muted">
+              <i class="bi bi-check-circle-fill text-primary flex-shrink-0"></i>
+              Replace 6-15 tools with one platform
+            </li>
+            <li class="d-flex align-items-center gap-2 py-2 border-bottom small text-muted">
+              <i class="bi bi-check-circle-fill text-primary flex-shrink-0"></i>
+              Automate thousands of hours of work
+            </li>
+            <li class="d-flex align-items-center gap-2 py-2 border-bottom small text-muted">
+              <i class="bi bi-check-circle-fill text-primary flex-shrink-0"></i>
+              Full operational control and audit trails
+            </li>
+            <li class="d-flex align-items-center gap-2 py-2 small text-muted">
+              <i class="bi bi-check-circle-fill text-primary flex-shrink-0"></i>
+              Bank-grade security and compliance
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ end }}

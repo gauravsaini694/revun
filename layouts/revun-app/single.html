@@ -1,0 +1,176 @@
+{{ define "main" }}
+
+<!-- ===== HERO ===== -->
+<section class="ra-hero text-center">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="section-tag reveal">Revun App</div>
+        <h1 class="ra-hero-title fw-bold mb-3 reveal reveal-delay-1">Revun App: Transparency That Makes People Trust Your Company</h1>
+        <p class="ra-hero-sub text-muted mx-auto mb-4 reveal reveal-delay-2">Owners, tenants, and vendors don't care about software. They care about clarity, speed, and accountability. The Revun App delivers that experience.</p>
+        <a href="/book-demo" class="btn btn-primary btn-hero-cta px-4 py-2 reveal reveal-delay-3">See the App Experience &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== OWNERS ===== -->
+<section class="py-5 bg-light-warm">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center mb-5">
+        <div class="ra-section-icon mb-3 reveal"><i class="bi bi-house-door fs-2"></i></div>
+        <div class="section-tag reveal">For Owners</div>
+        <h2 class="fw-bold reveal reveal-delay-1">Owners See Everything Without Chasing Anyone</h2>
+        <p class="text-muted reveal reveal-delay-2">Property owners get complete visibility into their investments with real-time updates and comprehensive reporting.</p>
+      </div>
+    </div>
+    <div class="row g-3 mb-4">
+      {{ $cards := slice
+        (dict "icon" "bi-grid"               "title" "Portfolio View"           "sub" "Current, past, and under management properties all in one place")
+        (dict "icon" "bi-currency-dollar"    "title" "Financial Summaries"      "sub" "Your personal financial performance summaries")
+        (dict "icon" "bi-tools"              "title" "Maintenance Status"       "sub" "Track every request with approved and real-time updates")
+        (dict "icon" "bi-file-earmark-text"  "title" "Document Vault"           "sub" "Leases, invoices, inspection documents, all in one secure place")
+        (dict "icon" "bi-chat-check"         "title" "Verified Communication"   "sub" "Complete history of all interactions and updates")
+      }}
+      {{ range $i, $c := $cards }}
+      <div class="col-sm-6 col-lg-4 reveal{{ if gt $i 0 }} reveal-delay-{{ $i }}{{ end }}">
+        <div class="ra-feature-card p-4 bg-white h-100">
+          <div class="ra-card-icon mb-3"><i class="bi {{ $c.icon }}"></i></div>
+          <div class="fw-semibold mb-2">{{ $c.title }}</div>
+          <p class="text-muted small mb-0">{{ $c.sub }}</p>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-lg-7 reveal">
+        <div class="ra-quote-box text-center px-4 py-3">
+          <p class="fst-italic text-muted mb-0 small">"This is why owners stay with companies that use Revun."</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== TENANTS ===== -->
+<section class="py-5 bg-white">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center mb-5">
+        <div class="ra-section-icon mb-3 reveal"><i class="bi bi-heart fs-2"></i></div>
+        <div class="section-tag reveal">For Tenants</div>
+        <h2 class="fw-bold reveal reveal-delay-1">Tenants Feel Informed, Respected, and Taken Care Of</h2>
+        <p class="text-muted reveal reveal-delay-2">A better tenant experience means higher retention, fewer conflicts, and stronger relationships.</p>
+      </div>
+    </div>
+    <div class="row g-3 mb-4">
+      {{ $cards := slice
+        (dict "icon" "bi-bell"           "title" "Rent Reminders &amp; Payments"       "sub" "Never miss a payment with automated reminders and easy payment options")
+        (dict "icon" "bi-clipboard-check" "title" "Maintenance Request Tracking"      "sub" "Submit, inspect and track progress with transparency and updates")
+        (dict "icon" "bi-chat-dots"      "title" "Chat History"                       "sub" "All communication, documented and accessible")
+        (dict "icon" "bi-robot"          "title" "AI Help Layer"                      "sub" "Get instant answers to common questions")
+        (dict "icon" "bi-eye"            "title" "Full Transparency"                  "sub" "Give renters complete visibility over all transactions")
+      }}
+      {{ range $i, $c := $cards }}
+      <div class="col-sm-6 col-lg-4 reveal{{ if gt $i 0 }} reveal-delay-{{ $i }}{{ end }}">
+        <div class="ra-feature-card p-4 bg-white h-100">
+          <div class="ra-card-icon mb-3"><i class="bi {{ $c.icon }}"></i></div>
+          <div class="fw-semibold mb-2">{{ $c.title | safeHTML }}</div>
+          <p class="text-muted small mb-0">{{ $c.sub }}</p>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-lg-7 reveal">
+        <div class="ra-quote-box text-center px-4 py-3" style="background:#f7f6f2;">
+          <p class="fst-italic text-muted mb-0 small">"This reduces conflicts because everything is documented and visible."</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== VENDORS ===== -->
+<section class="py-5 bg-light-warm">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center mb-5">
+        <div class="ra-section-icon mb-3 reveal"><i class="bi bi-wrench-adjustable fs-2"></i></div>
+        <div class="section-tag reveal">For Vendors</div>
+        <h2 class="fw-bold reveal reveal-delay-1">Vendors Get Clear Work Orders and Faster Payments</h2>
+        <p class="text-muted reveal reveal-delay-2">Better vendor relationships mean better service quality and more reliable operations.</p>
+      </div>
+    </div>
+    <div class="row g-3">
+      {{ $cards := slice
+        (dict "icon" "bi-file-earmark-ruled"  "title" "Work Order Details"          "sub" "Complete job specifications and requirements")
+        (dict "icon" "bi-box-arrow-in-right"  "title" "Check-In/Out Documentation"  "sub" "Track and document each completion")
+        (dict "icon" "bi-camera"              "title" "Photos &amp; Notes"          "sub" "Upload before/after photos and detailed notes")
+        (dict "icon" "bi-patch-check"         "title" "Approvals &amp; Verification" "sub" "Clear approval process for work completion")
+        (dict "icon" "bi-lightning-charge"    "title" "Faster Payments"             "sub" "Streamlined invoicing and payment workflows")
+      }}
+      {{ range $i, $c := $cards }}
+      <div class="col-sm-6 col-lg-4 reveal{{ if gt $i 0 }} reveal-delay-{{ $i }}{{ end }}">
+        <div class="ra-feature-card p-4 bg-white h-100">
+          <div class="ra-card-icon mb-3"><i class="bi {{ $c.icon }}"></i></div>
+          <div class="fw-semibold mb-2">{{ $c.title | safeHTML }}</div>
+          <p class="text-muted small mb-0">{{ $c.sub }}</p>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== WHY ===== -->
+<section class="py-5 bg-white">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center mb-5">
+        <div class="section-tag reveal">Why It Works</div>
+        <h2 class="fw-bold reveal reveal-delay-1">Why Revun App Creates Better Relationships</h2>
+      </div>
+    </div>
+    <div class="row g-4 justify-content-center">
+      {{ $why := slice
+        (dict "icon" "bi-eye"              "title" "Full Transparency"    "sub" "Everyone sees the same information at the same time, eliminating confusion and building trust.")
+        (dict "icon" "bi-chat-left-text"   "title" "Clear Communication"  "sub" "All communication is logged, searchable, and accountable — no more \"he said, she said\".")
+        (dict "icon" "bi-arrow-right-circle" "title" "Faster Resolution"  "sub" "Every request has a clear path to resolution because the information and tools are always there.")
+      }}
+      {{ range $i, $w := $why }}
+      <div class="col-md-4 reveal{{ if gt $i 0 }} reveal-delay-{{ $i }}{{ end }}">
+        <div class="ra-why-card text-center p-4 h-100">
+          <div class="ra-why-icon mb-3"><i class="bi {{ $w.icon }} fs-3"></i></div>
+          <h6 class="fw-bold mb-2">{{ $w.title }}</h6>
+          <p class="text-muted small mb-0">{{ $w.sub }}</p>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="rp-cta-section text-white text-center">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-6">
+        <div class="section-tag reveal" style="color:#E55733;">Get Started</div>
+        <h2 class="fw-bold text-white reveal reveal-delay-1">Give Your Stakeholders the Experience They Deserve</h2>
+        <p class="text-white-60 mb-4 reveal reveal-delay-2">See how Revun App creates transparency and trust that sets your company apart.</p>
+        <div class="d-flex justify-content-center gap-3 flex-wrap reveal reveal-delay-3">
+          <a href="/book-demo" class="btn btn-primary btn-hero-cta px-4 py-2">Book a Demo &rarr;</a>
+          <a href="/pricing"   class="btn btn-outline-light px-4 py-2 fw-semibold">Explore Full Platform</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ end }}

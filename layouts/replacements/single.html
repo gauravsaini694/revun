@@ -1,0 +1,159 @@
+{{ define "main" }}
+
+<!-- ===== HERO ===== -->
+<section class="rep-hero text-center">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="section-tag reveal">Replace &amp; Integrate</div>
+        <h1 class="rep-hero-title fw-bold mb-3 reveal reveal-delay-1">Replace the Entire Stack. Keep the Integrations You Want.</h1>
+        <p class="text-muted mx-auto reveal reveal-delay-2" style="max-width:580px;font-size:.95rem;line-height:1.7;">Revun consolidates your fragmented software stack into one powerful platform — while maintaining deep integrations where they matter most.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== WHAT REVUN REPLACES ===== -->
+<section class="py-5 bg-light-warm">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center mb-5">
+        <div class="section-tag reveal">Tool Consolidation</div>
+        <h2 class="fw-bold reveal reveal-delay-1">What Revun Replaces</h2>
+        <p class="text-muted reveal reveal-delay-2">Stop paying for multiple disconnected tools. Revun brings everything into one unified operating system.</p>
+      </div>
+    </div>
+    <div class="row g-3 mb-4">
+      {{ $replaces := slice
+        (dict "title" "Property Management Systems" "items" (slice "AppFolio" "PropertyWare" "Yardi (or can replace or integrate)"))
+        (dict "title" "Communication"               "items" (slice "RingCentral" "Slack" "Client-style internal messaging tools"))
+        (dict "title" "CRM &amp; Operations"        "items" (slice "Salesforce" "Task management platforms" "Master systems"))
+        (dict "title" "Maintenance Platforms"       "items" (slice "Standalone work order systems" "Vendor dispatch tools"))
+        (dict "title" "Documents"                   "items" (slice "Scattered emails + legal fragments" "Disconnected document storage"))
+      }}
+      {{ range $i, $r := $replaces }}
+      <div class="col-md-6 col-lg-4 reveal{{ if gt $i 0 }} reveal-delay-{{ mod $i 3 }}{{ end }}">
+        <div class="rep-replace-card p-4 bg-white h-100">
+          <div class="d-flex align-items-center gap-2 mb-3">
+            <span class="rep-x-badge"><i class="bi bi-x-lg"></i></span>
+            <span class="fw-semibold small">{{ $r.title | safeHTML }}</span>
+          </div>
+          <ul class="list-unstyled small text-muted mb-0">
+            {{ range $r.items }}<li class="py-1">• {{ . }}</li>{{ end }}
+          </ul>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+
+    <!-- Dark Banner -->
+    <div class="rep-dark-banner p-4 p-md-5 text-white text-center reveal">
+      <p class="fw-bold fs-5 mb-2">One platform. One login. One audit trail.</p>
+      <p class="text-white-60 small mb-4">Stop juggling between systems. Drop the old ones and stop wasting your budget.</p>
+      <div class="row justify-content-center g-4">
+        <div class="col-4 col-md-2"><div class="rep-stat-num" style="color:#E55733;">6-15</div><div class="text-white-60 small">Tools Replaced</div></div>
+        <div class="col-4 col-md-2"><div class="rep-stat-num" style="color:#E55733;">$1000s</div><div class="text-white-60 small">Saved Monthly</div></div>
+        <div class="col-4 col-md-2"><div class="rep-stat-num" style="color:#E55733;">100%</div><div class="text-white-60 small">One Platform</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== SEE THE SAVINGS ===== -->
+<section class="py-5 bg-white">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center mb-5">
+        <div class="section-tag reveal">Cost Comparison</div>
+        <h2 class="fw-bold reveal reveal-delay-1">See the Savings</h2>
+        <p class="text-muted reveal reveal-delay-2">Most companies save thousands per month by consolidating their tech stack into Revun.</p>
+      </div>
+    </div>
+    <div class="row g-4 mb-4">
+      <div class="col-md-6 reveal">
+        <div class="rep-compare-card p-4 h-100">
+          <h6 class="fw-bold rep-before-title mb-3">Before Revun</h6>
+          <div class="d-flex justify-content-between py-2 border-bottom small"><span class="text-muted">Property Management System</span><span class="text-danger fw-medium">$100–300/mo</span></div>
+          <div class="d-flex justify-content-between py-2 border-bottom small"><span class="text-muted">Communication Tools</span><span class="text-danger fw-medium">$100/mo</span></div>
+          <div class="d-flex justify-content-between py-2 border-bottom small"><span class="text-muted">CRM &amp; Task Management</span><span class="text-danger fw-medium">$100–400/mo</span></div>
+          <div class="d-flex justify-content-between py-2 border-bottom small"><span class="text-muted">Maintenance Platforms</span><span class="text-danger fw-medium">$100–200/mo</span></div>
+          <div class="d-flex justify-content-between py-2 border-bottom small"><span class="text-muted">Document Storage &amp; E-sign</span><span class="text-danger fw-medium">$100/mo</span></div>
+          <div class="d-flex justify-content-between py-2 border-bottom small"><span class="text-muted">Other Tools</span><span class="text-danger fw-medium">$200+/mo</span></div>
+          <div class="d-flex justify-content-between pt-3 fw-bold"><span>Total Monthly Cost</span><span class="text-danger">$1,650–3,100</span></div>
+        </div>
+      </div>
+      <div class="col-md-6 reveal reveal-delay-1">
+        <div class="rep-compare-card rep-with-card p-4 h-100">
+          <h6 class="fw-bold mb-3" style="color:#E55733;">With Revun</h6>
+          <div class="d-flex justify-content-between py-2 border-bottom small"><span class="text-muted">Property Management</span><span class="text-success fw-medium">Included</span></div>
+          <div class="d-flex justify-content-between py-2 border-bottom small"><span class="text-muted">CRM &amp; Task Management</span><span class="text-success fw-medium">Included</span></div>
+          <div class="d-flex justify-content-between py-2 border-bottom small"><span class="text-muted">Maintenance Platform</span><span class="text-success fw-medium">Included</span></div>
+          <div class="d-flex justify-content-between py-2 border-bottom small"><span class="text-muted">Document Storage &amp; E-sign</span><span class="text-success fw-medium">Included</span></div>
+          <div class="d-flex justify-content-between py-2 border-bottom small"><span class="text-muted">All Automation</span><span class="text-success fw-medium">Included</span></div>
+          <div class="d-flex justify-content-between pt-3 fw-bold"><span>Total Monthly Cost</span><span style="color:#E55733;">One Platform</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="text-center reveal">
+      <a href="/pricing" class="btn btn-primary btn-hero-cta px-4 py-2">Calculate Your Savings &rarr;</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== DEEP INTEGRATIONS ===== -->
+<section class="py-5 bg-light-warm">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center mb-5">
+        <div class="section-tag reveal">Integrations</div>
+        <h2 class="fw-bold reveal reveal-delay-1">Deep Integrations Where It Matters</h2>
+        <p class="text-muted reveal reveal-delay-2">While Revun replaces most of your stack, it integrates seamlessly with critical systems where needed.</p>
+      </div>
+    </div>
+    <div class="row g-3">
+      {{ $integ := slice
+        (dict "title" "Payments"                    "sub1" "Stripe"       "sub2" "Secure payment processing and transaction reporting")
+        (dict "title" "Accounting"                  "sub1" "QuickBooks"   "sub2" "Financial data sync and reconciliation")
+        (dict "title" "Enterprise Property Systems" "sub1" ""             "sub2" "Deep integration with existing enterprise systems")
+        (dict "title" "Identity &amp; Verification" "sub1" "Configurable" "sub2" "Configurable providers")
+        (dict "title" "Banking &amp; Verification"  "sub1" ""             "sub2" "Bank account verification and ACH processing")
+        (dict "title" "CRM Sync"                    "sub1" "Configurable" "sub2" "Works with existing CRM systems")
+      }}
+      {{ range $i, $g := $integ }}
+      <div class="col-md-6 col-lg-4 reveal{{ if gt $i 0 }} reveal-delay-{{ mod $i 3 }}{{ end }}">
+        <div class="rep-integ-card p-4 bg-white h-100">
+          <div class="d-flex align-items-center gap-2 mb-2">
+            <i class="bi bi-check2-circle" style="color:#E55733;font-size:1.1rem;"></i>
+            <span class="fw-semibold small">{{ $g.title | safeHTML }}</span>
+          </div>
+          {{ if $g.sub1 }}<p class="text-muted small mb-1 ms-4">{{ $g.sub1 }}</p>{{ end }}
+          <p class="text-muted small mb-0 ms-4">{{ $g.sub2 }}</p>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== CTA ===== -->
+<section class="rp-cta-section text-white text-center">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-6">
+        <div class="section-tag reveal" style="color:#E55733;">Get Started</div>
+        <h2 class="fw-bold text-white reveal reveal-delay-1">Ready to Simplify Your Tech Stack?</h2>
+        <p class="text-white-60 mb-4 reveal reveal-delay-2">See how much you can save by consolidating to Revun.</p>
+        <div class="d-flex justify-content-center gap-3 flex-wrap reveal reveal-delay-3">
+          <a href="/book-demo" class="btn btn-primary btn-hero-cta px-4 py-2">Book a Demo &rarr;</a>
+          <a href="/pricing"   class="btn btn-outline-light px-4 py-2 fw-semibold">See Pricing</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ end }}

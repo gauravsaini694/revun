@@ -1,0 +1,175 @@
+{{ define "main" }}
+
+<!-- ===== HERO ===== -->
+<section class="rp-hero text-white">
+  <div class="container py-3">
+    <div class="row">
+      <div class="col-lg-7">
+        <div class="section-tag reveal" style="color:#E55733;">Revun Pro</div>
+        <h1 class="rp-hero-title fw-bold mb-3 reveal reveal-delay-1">Revun Pro: Full Control of Your Company at Every Level</h1>
+        <p class="rp-hero-sub mb-4 reveal reveal-delay-2">Revun Pro is a configurable operating system for real estate businesses. Set permissions, roles, and workflows for every department — and run the entire organization from one place.</p>
+        <a href="/book-demo" class="btn btn-primary btn-hero-cta px-4 py-2 reveal reveal-delay-3">Book a Demo &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== EVERY ROLE ===== -->
+<section class="py-5 bg-white">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center mb-5">
+        <div class="section-tag reveal">Permissions</div>
+        <h2 class="fw-bold reveal reveal-delay-1">Every Role. Every Permission. Every Department.</h2>
+        <p class="text-muted mt-2 reveal reveal-delay-2">Revun Pro provides granular control over who can see what, approve what, and access which data — ensuring security and accountability at every level.</p>
+      </div>
+    </div>
+    <div class="table-responsive reveal">
+      <table class="table rp-table align-middle">
+        <thead>
+          <tr>
+            <th>Role</th><th>Access Scope</th><th>Approval Rights</th>
+            <th>Financial Visibility</th><th>Document Permissions</th>
+            <th>Messaging Rights</th><th>Audit Visibility</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="fw-medium">Executive Admin</td><td class="text-primary">Full company</td><td>All</td><td>Full</td><td class="text-primary">All</td><td>All</td><td>Full</td></tr>
+          <tr><td class="fw-medium">Department Head</td><td>Department</td><td>Department</td><td>Department</td><td class="text-primary">Department</td><td>Department</td><td class="text-primary">Department</td></tr>
+          <tr><td class="fw-medium">Manager</td><td>Team</td><td>Team</td><td>Limited</td><td>Team</td><td>Team</td><td>Team</td></tr>
+          <tr><td class="fw-medium">Agent/Coordinator</td><td>Assigned</td><td>None</td><td>None</td><td>Assigned</td><td>Assigned</td><td>Own</td></tr>
+          <tr><td class="fw-medium">Accounting</td><td class="text-primary">Financial</td><td>Financial</td><td>Full</td><td class="text-primary">Financial</td><td>Financial</td><td>Financial</td></tr>
+          <tr><td class="fw-medium">Legal</td><td>Legal docs</td><td>Legal</td><td>None</td><td>Legal</td><td>Legal</td><td>Legal</td></tr>
+          <tr><td class="fw-medium">Maintenance Dispatch</td><td>Maintenance</td><td>Maintenance</td><td>None</td><td>Maintenance</td><td>All</td><td>Maintenance</td></tr>
+          <tr><td class="fw-medium">Vendor Admin</td><td>Vendor portal</td><td>None</td><td>Payment status</td><td>Work orders</td><td>Assigned</td><td>Own</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== DEPARTMENT COVERAGE ===== -->
+<section class="py-5 bg-light-warm">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center mb-5">
+        <div class="section-tag reveal">Departments</div>
+        <h2 class="fw-bold reveal reveal-delay-1">Complete Department Coverage</h2>
+        <p class="text-muted reveal reveal-delay-2">Every department has purpose-built workflows, automations, and controls within Revun Pro.</p>
+      </div>
+    </div>
+    <div class="row g-3">
+      {{ $depts := slice
+        (dict "id" "PM"      "icon" "bi-building"      "label" "Property Management" "items" (slice "Unit management and listings" "Work order tracking" "Tenant communications" "Inspection workflows"))
+        (dict "id" "Leasing" "icon" "bi-person-lines-fill" "label" "Leasing"          "items" (slice "Lead tracking and follow-ups" "Listing syndication" "Application processing" "Lease generation and signing"))
+        (dict "id" "Maint"   "icon" "bi-wrench"         "label" "Maintenance"         "items" (slice "Work order creation and dispatch" "Vendor assignment and tracking" "Approval workflows" "Cost tracking and invoicing"))
+        (dict "id" "Acct"    "icon" "bi-calculator"     "label" "Accounting / Finance" "items" (slice "Rent collection and tracking" "Payment reconciliation" "Financial reporting" "Budget management"))
+        (dict "id" "Legal"   "icon" "bi-balance-scale"  "label" "Legal / Compliance"  "items" (slice "Document management" "Compliance checklists" "Audit trail and records" "Legal notice workflows"))
+        (dict "id" "HR"      "icon" "bi-person-plus"    "label" "Recruiting / Hiring / Onboarding" "items" (slice "Job posting and tracking" "Onboarding task automation" "Training workflows" "Role and permission setup"))
+      }}
+      {{ range $i, $d := $depts }}
+      <div class="col-md-4 reveal{{ if gt $i 0 }} reveal-delay-{{ $i }}{{ end }}">
+        <div class="rp-dept-accordion">
+          <button class="rp-dept-btn w-100 d-flex align-items-center justify-content-between px-3 py-3 border"
+            type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ $d.id }}">
+            <span class="d-flex align-items-center gap-2">
+              <i class="bi {{ $d.icon }}" style="color:#E55733;"></i>
+              <span class="fw-semibold small">{{ $d.label }}</span>
+            </span>
+            <i class="bi bi-chevron-down text-muted small"></i>
+          </button>
+          <div id="collapse{{ $d.id }}" class="collapse rp-dept-body px-3 py-3 bg-white border border-top-0">
+            <ul class="list-unstyled small text-muted mb-0">
+              {{ range $d.items }}<li class="py-1"><i class="bi bi-check2 me-2" style="color:#E55733;"></i>{{ . }}</li>{{ end }}
+            </ul>
+          </div>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== ORGANIZED ===== -->
+<section class="py-5 bg-white">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-7 text-center mb-5">
+        <div class="section-tag reveal">Daily Operations</div>
+        <h2 class="fw-bold reveal reveal-delay-1">The Platform That Makes Work Feel Organized</h2>
+        <p class="text-muted reveal reveal-delay-2">When your team runs on Revun Pro, daily work becomes clearer, faster, and more confident.</p>
+      </div>
+    </div>
+    <div class="row g-4 mb-5">
+      {{ $features := slice
+        (dict "title" "One place to start the day"     "sub" "Tasks + comms + priorities in a single dashboard")
+        (dict "title" "AI guidance + cross-checking"   "sub" "Reduces mistakes and provides helpful context")
+        (dict "title" "Standard workflows"             "sub" "New hires become productive faster")
+        (dict "title" "Clear and easier"               "sub" "People don't want to leave because life is better on Revun")
+      }}
+      {{ range $i, $f := $features }}
+      <div class="col-md-6 reveal{{ if gt $i 0 }} reveal-delay-{{ $i }}{{ end }}">
+        <div class="d-flex align-items-start gap-3 p-3 rounded-3" style="background:#f7f6f2;">
+          <i class="bi bi-check-circle-fill mt-1 flex-shrink-0" style="color:#E55733;font-size:1.1rem;"></i>
+          <div>
+            <div class="fw-semibold small mb-1">{{ $f.title }}</div>
+            <div class="text-muted" style="font-size:.8rem;">{{ $f.sub }}</div>
+          </div>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+
+    <!-- Day in the Life -->
+    <div class="row justify-content-center">
+      <div class="col-lg-9 reveal">
+        <div class="rp-daylife-card border p-4">
+          <div class="section-tag text-center d-block mb-1">Schedule</div>
+          <h5 class="fw-bold text-center mb-4">A Day in the Life on Revun Pro</h5>
+          {{ $timeline := slice
+            (dict "time" "8:00 AM"  "title" "Morning Dashboard"     "sub" "Review priorities, flagged items, and team status")
+            (dict "time" "9:00 AM"  "title" "Task Queue"            "sub" "Work through assigned tasks with AI guidance and context")
+            (dict "time" "11:00 AM" "title" "Automated Follow-ups"  "sub" "System sends reminders and updates stakeholders automatically")
+            (dict "time" "2:00 PM"  "title" "Approval Routing"      "sub" "Route approvals through proper channels with full audit trail")
+            (dict "time" "5:00 PM"  "title" "End-of-Day Reporting"  "sub" "Automated daily summaries and performance metrics")
+          }}
+          {{ range $timeline }}
+          <div class="rp-timeline-item d-flex align-items-start justify-content-between gap-3 py-3 border-bottom">
+            <div class="d-flex align-items-start gap-3">
+              <i class="bi bi-clock-fill flex-shrink-0 mt-1" style="color:#E55733;"></i>
+              <div>
+                <div class="fw-semibold small">{{ .title }}</div>
+                <div class="text-muted" style="font-size:.8rem;">{{ .sub }}</div>
+              </div>
+            </div>
+            <span class="text-muted small flex-shrink-0 fw-semibold">{{ .time }}</span>
+          </div>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== CTA ===== -->
+<section class="rp-cta-section text-white text-center">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-6">
+        <div class="section-tag reveal" style="color:#E55733;">Get Started</div>
+        <h2 class="fw-bold text-white reveal reveal-delay-1">See Revun Pro in Action</h2>
+        <p class="text-white-60 mb-4 reveal reveal-delay-2">Experience how Revun Pro transforms real estate operations with full departmental control and automation.</p>
+        <div class="d-flex justify-content-center gap-3 flex-wrap reveal reveal-delay-3">
+          <a href="/book-demo" class="btn btn-primary btn-hero-cta px-4 py-2">Book a Demo &rarr;</a>
+          <a href="/pricing"   class="btn btn-outline-light px-4 py-2 fw-semibold">View Pricing</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ end }}
